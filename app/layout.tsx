@@ -56,7 +56,7 @@ export async function generateMetadata(): Promise<Metadata> {
         url: socialImage,
         width: 1536,
         height: 1024,
-        alt: "Geff — siti web professionali senza complicazioni",
+        alt: "Geff — Fatti trovare. Fatti capire. Fatti scegliere.",
       }],
     },
     twitter: {

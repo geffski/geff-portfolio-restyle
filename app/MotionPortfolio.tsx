@@ -134,19 +134,6 @@ export default function MotionPortfolio() {
     };
   }, []);
 
-  const moveHero = (event: PointerEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    event.currentTarget.style.setProperty("--hero-x", x.toFixed(3));
-    event.currentTarget.style.setProperty("--hero-y", y.toFixed(3));
-  };
-
-  const resetHero = (event: PointerEvent<HTMLDivElement>) => {
-    event.currentTarget.style.setProperty("--hero-x", "0");
-    event.currentTarget.style.setProperty("--hero-y", "0");
-  };
-
   const moveMagnet = (event: PointerEvent<HTMLElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - rect.left - rect.width / 2) * 0.18;
@@ -212,37 +199,34 @@ export default function MotionPortfolio() {
 
       <main className="motion-site" ref={rootRef}>
         <section className="motion-hero" id="inizio" aria-labelledby="motion-title">
-          <div className="motion-stage" onPointerMove={moveHero} onPointerLeave={resetHero}>
+          <div className="motion-stage">
+            <div className="motion-hero-ghost" aria-hidden="true">WEB</div>
             <div className="motion-title-block">
-              <p className="motion-hero-kicker">PER PICCOLE ATTIVITÀ · MODENA E DINTORNI</p>
+              <p className="motion-hero-kicker">SITI WEB PER PICCOLE ATTIVITÀ · MODENA</p>
               <h1 id="motion-title">
-                <span><i>Siti web</i></span>
-                <span><i>professionali,</i></span>
-                <span><i>senza</i></span>
-                <span><i>complicazioni.</i></span>
+                <span><i>Fatti trovare.</i></span>
+                <span><i>Fatti capire.</i></span>
+                <span><i><em>Fatti scegliere.</em></i></span>
               </h1>
-              <p className="motion-hero-intro">
-                Mi occupo personalmente di design, versione mobile, pubblicazione e modifiche.
-                Il sito essenziale completo costa €300.
-              </p>
-              <div className="motion-hero-actions">
-                <a href={directWhatsAppUrl} target="_blank" rel="noreferrer">
-                  Parliamo del tuo sito su WhatsApp
-                </a>
+              <div className="motion-hero-copy">
+                <p className="motion-hero-intro">
+                  Un sito chiaro, veloce e curato, con tutto quello che serve per presentarti
+                  e farti contattare.
+                </p>
+                <div className="motion-hero-actions">
+                  <a href="#contatti">Parliamo del tuo sito</a>
+                </div>
               </div>
-              <small className="motion-placeholder-note">Numero WhatsApp temporaneo · da sostituire</small>
             </div>
-            <img
-              className="motion-object"
-              src="/geff-dark-fold-accordion.png"
-              alt="Portfolio editoriale aperto a fisarmonica con pannelli grafici neri e blu"
-              width="1600"
-              height="1050"
-            />
-            <div className="motion-orbit" aria-hidden="true"><i /><span>MOVE</span></div>
+            <div className="motion-price-badge" aria-label="Sito completo a 300 euro">
+              <div><strong>€300</strong><span>Sito completo</span></div>
+            </div>
+            <div className="motion-hero-facts" aria-label="Caratteristiche principali">
+              <span>Desktop · Tablet · Mobile</span>
+              <span>Hosting gestito</span>
+              <span>Design · Testi · Pubblicazione</span>
+            </div>
           </div>
-
-          <div className="motion-marquee" aria-hidden="true"><div>Siti web — Versione mobile — Pubblicazione — Siti web — Versione mobile — Pubblicazione —</div></div>
         </section>
 
         <section className="motion-work" id="lavori" aria-labelledby="motion-work-title">
