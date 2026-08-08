@@ -277,12 +277,12 @@ export default function MotionPortfolio() {
 
         <section className="motion-offer" id="offerta" aria-labelledby="motion-offer-title">
           <div className="motion-offer-main" data-reveal>
-            <p className="motion-label">UN SITO STATICO, FATTO BENE</p>
+            <p className="motion-label">UN SITO COMPLETO, FATTO BENE</p>
             <h2 id="motion-offer-title">Semplice nella struttura.<br /><em>Completo in tutto il resto.</em></h2>
             <div className="motion-offer-promise">
               <strong>€300</strong>
               <div>
-                <p>Realizzo il sito statico concordato, in una lingua, con tutto ciò che normalmente serve per presentare bene la tua attività.</p>
+                <p>Realizzo il sito concordato, in una lingua, con tutto ciò che normalmente serve per presentare bene la tua attività.</p>
                 <small>Definiamo insieme pagine, sezioni e funzioni prima di iniziare. Finché il progetto resta in quel perimetro, il prezzo resta €300.</small>
               </div>
             </div>

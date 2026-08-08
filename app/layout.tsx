@@ -26,7 +26,7 @@ const dmSerif = DM_Serif_Display({
 
 const title = "Siti web professionali per piccole attività | Geff";
 const description =
-  "Design, contenuti, pubblicazione e modifiche per piccole attività. Siti statici completi a €300, seguiti personalmente da Geff a Modena.";
+  "Design, contenuti, pubblicazione e modifiche per piccole attività. Siti web completi a €300, seguiti personalmente da Geff a Modena.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
