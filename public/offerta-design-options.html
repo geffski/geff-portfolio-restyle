@@ -3,10 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Proposte sezione offerta · Geff</title>
+    <title>Confronto font per l’offerta · Geff</title>
     <meta
       name="description"
-      content="Quattro proposte di design per presentare il sito essenziale da 300 euro."
+      content="Quattro direzioni tipografiche per la sezione editoriale del sito essenziale."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;family=DM+Serif+Display&amp;family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
     />
     <style>
       :root {
@@ -180,6 +186,21 @@
       .outside { margin-top: 60px; padding-top: 22px; border-top: 3px solid var(--blue); }
       .outside strong { display: block; margin-bottom: 12px; font-size: 14px; }
       .outside p { margin: 0; color: #5d5d5a; font-size: 13px; line-height: 1.55; }
+      .font-choice { background: var(--paper); }
+      .font-choice .editorial { background: var(--paper); }
+      .font-choice .editorial h2 em { font-weight: 400; }
+      .font-b1 .editorial { font-family: "Manrope", Arial, sans-serif; }
+      .font-b1 .editorial h2 { font-weight: 600; letter-spacing: -0.065em; }
+      .font-b1 .editorial h2 em { font-family: "Manrope", Arial, sans-serif; font-style: normal; font-weight: 700; }
+      .font-b2 .editorial { font-family: "DM Sans", Arial, sans-serif; }
+      .font-b2 .editorial h2 { font-weight: 500; letter-spacing: -0.06em; }
+      .font-b2 .editorial h2 em { font-family: "DM Serif Display", Georgia, serif; font-style: normal; }
+      .font-b3 .editorial { font-family: "Space Grotesk", Arial, sans-serif; }
+      .font-b3 .editorial h2 { font-weight: 500; letter-spacing: -0.065em; }
+      .font-b3 .editorial h2 em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
+      .font-b4 .editorial { font-family: "Plus Jakarta Sans", Arial, sans-serif; }
+      .font-b4 .editorial h2 { font-weight: 500; letter-spacing: -0.06em; }
+      .font-b4 .editorial h2 em { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 600; }
 
       /* C — proposal */
       .option-c { background: #111; color: white; }
@@ -310,54 +331,26 @@
   <body>
     <header class="topbar">
       <div class="brand"><strong>Geff</strong><span>Web designer</span></div>
-      <p>Confronto sezione “Sito essenziale”</p>
-      <nav aria-label="Vai a una proposta">
-        <a href="#a" aria-label="Proposta A">A</a>
-        <a href="#b" aria-label="Proposta B">B</a>
-        <a href="#c" aria-label="Proposta C">C</a>
-        <a href="#d" aria-label="Proposta D">D</a>
+      <p>Opzione B · Confronto tipografico</p>
+      <nav aria-label="Vai a una proposta tipografica">
+        <a href="#b1" aria-label="Font B1">1</a>
+        <a href="#b2" aria-label="Font B2">2</a>
+        <a href="#b3" aria-label="Font B3">3</a>
+        <a href="#b4" aria-label="Font B4">4</a>
       </nav>
     </header>
 
     <main>
       <section class="intro">
         <div>
-          <p class="eyebrow">Pagina di confronto · 4 direzioni</p>
-          <p class="intro-note">Ogni proposta comunica la stessa cosa: €300 è il prezzo completo quando il progetto resta nel perimetro indicato.</p>
+          <p class="eyebrow">Opzione B confermata · 4 font</p>
+          <p class="intro-note">Layout, colori e contenuti restano identici. Cambia soltanto la coppia tipografica, così puoi scegliere senza altre variabili.</p>
         </div>
-        <h1>Come presentiamo<br /><em>l’offerta?</em></h1>
+        <h1>Quale voce diamo<br /><em>all’offerta?</em></h1>
       </section>
 
-      <section class="option option-a" id="a">
-        <div class="option-label"><span>Opzione A · Dichiarazione diretta</span><span>Impatto alto</span></div>
-        <div class="statement">
-          <div class="statement-copy">
-            <div>
-              <p class="kicker">Sito essenziale</p>
-              <h2>€300<span>Se ti serve questo, il prezzo è questo.</span></h2>
-            </div>
-            <p class="statement-lead">Una pagina su misura, completa e pronta per andare online. Nessun prezzo-esca: se il progetto resta in questo perimetro, il totale resta €300.</p>
-          </div>
-          <div class="statement-scope">
-            <h3>Dentro i €300</h3>
-            <ol>
-              <li><span>01</span>Una pagina con le sezioni essenziali</li>
-              <li><span>02</span>Design personalizzato, desktop e mobile</li>
-              <li><span>03</span>Inserimento dei materiali che mi fornisci</li>
-              <li><span>04</span>Contatti diretti, WhatsApp, telefono o mappa</li>
-              <li><span>05</span>Sviluppo, controlli e pubblicazione</li>
-              <li><span>06</span>Modifiche concordate prima del lancio</li>
-            </ol>
-            <div class="extras">
-              <h3>Quando cambia il prezzo</h3>
-              <p>Solo se aggiungiamo più pagine, più lingue, booking, e-commerce, identità visiva, produzione di testi o foto, oppure funzioni su misura.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="option option-b" id="b">
-        <div class="option-label"><span>Opzione B · Editoriale</span><span>Più elegante</span></div>
+      <section class="option font-choice font-b1" id="b1">
+        <div class="option-label"><span>B1 · Manrope</span><span>Moderna e uniforme</span></div>
         <div class="editorial">
           <div class="editorial-main">
             <p class="kicker">Un sito essenziale, non un sito generico</p>
@@ -390,82 +383,111 @@
         </div>
       </section>
 
-      <section class="option option-c" id="c">
-        <div class="option-label"><span>Opzione C · Preventivo visivo</span><span>Più strutturata</span></div>
-        <div class="proposal">
-          <div class="proposal-head">
-            <div>
-              <p class="kicker">Pacchetto 01 · Sito essenziale</p>
-              <h2>Una base completa per andare online bene.</h2>
+      <section class="option font-choice font-b2" id="b2">
+        <div class="option-label"><span>B2 · DM Sans + DM Serif Display</span><span>Morbida e professionale</span></div>
+        <div class="editorial">
+          <div class="editorial-main">
+            <p class="kicker">Un sito essenziale, non un sito generico</p>
+            <h2>Tutto quello che serve.<br /><em>Niente sorprese.</em></h2>
+            <div class="promise">
+              <strong>€300</strong>
+              <div>
+                <p>È il prezzo completo del pacchetto, non il punto da cui iniziare a sommare costi.</p>
+                <small>Prima di iniziare definiamo insieme il perimetro. Se resta quello descritto qui, il prezzo non cambia.</small>
+              </div>
             </div>
+          </div>
+          <aside class="editorial-list">
             <div>
-              <p>Il progetto ha un perimetro chiaro, così sai subito cosa ricevi e quanto spendi.</p>
-              <div class="price-lockup"><strong>€300</strong><span>Totale pacchetto</span></div>
+              <p class="kicker">Il pacchetto comprende</p>
+              <ul>
+                <li>Struttura di una pagina su misura</li>
+                <li>Design desktop e mobile</li>
+                <li>Inserimento di testi e immagini forniti</li>
+                <li>Contatti diretti e mappa</li>
+                <li>Sviluppo e pubblicazione</li>
+                <li>Revisioni concordate</li>
+              </ul>
             </div>
-          </div>
-          <div class="proposal-grid">
-            <article class="proposal-card"><span>01</span><h3>Direzione</h3><p>Struttura della pagina e design su misura per la tua attività.</p></article>
-            <article class="proposal-card"><span>02</span><h3>Contenuti</h3><p>Inserimento dei testi, delle immagini e dei contatti che mi fornisci.</p></article>
-            <article class="proposal-card"><span>03</span><h3>Responsive</h3><p>Versione desktop e mobile progettate come un unico sistema.</p></article>
-            <article class="proposal-card"><span>04</span><h3>Sviluppo</h3><p>Costruzione del sito, controlli tecnici e ottimizzazione finale.</p></article>
-            <article class="proposal-card"><span>05</span><h3>Revisioni</h3><p>Modifiche concordate insieme prima della pubblicazione.</p></article>
-            <article class="proposal-card"><span>06</span><h3>Online</h3><p>Pubblicazione e collegamento ai servizi concordati.</p></article>
-          </div>
-          <div class="proposal-foot">
-            <span><strong>Prezzo fisso nel perimetro.</strong> Ogni eventuale extra viene definito prima di iniziare.</span>
-            <span>Esclusi: dominio, hosting e richieste fuori dal pacchetto.</span>
-          </div>
+            <div class="outside">
+              <strong>Si quota a parte solo ciò che esce dal pacchetto.</strong>
+              <p>Più pagine o lingue, e-commerce, booking, logo, testi o fotografie da produrre e funzioni personalizzate.</p>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section class="option option-d" id="d">
-        <div class="option-label"><span>Opzione D · Confronto immediato</span><span>Più compatta</span></div>
-        <div class="compact">
-          <div class="compact-shell">
-            <div class="compact-price">
+      <section class="option font-choice font-b3" id="b3">
+        <div class="option-label"><span>B3 · Space Grotesk + Instrument Serif</span><span>Creativa e distintiva</span></div>
+        <div class="editorial">
+          <div class="editorial-main">
+            <p class="kicker">Un sito essenziale, non un sito generico</p>
+            <h2>Tutto quello che serve.<br /><em>Niente sorprese.</em></h2>
+            <div class="promise">
+              <strong>€300</strong>
               <div>
-                <p class="kicker">Sito essenziale</p>
-                <h2>Il tuo sito completo.</h2>
+                <p>È il prezzo completo del pacchetto, non il punto da cui iniziare a sommare costi.</p>
+                <small>Prima di iniziare definiamo insieme il perimetro. Se resta quello descritto qui, il prezzo non cambia.</small>
               </div>
-              <div>
-                <strong>€300</strong>
-                <p>Prezzo completo quando il progetto resta nel perimetro qui accanto.</p>
-              </div>
-            </div>
-            <div class="compact-content">
-              <div class="yes-no">
-                <div>
-                  <h3><span>✓</span>È compreso</h3>
-                  <ul>
-                    <li>Una pagina su misura</li>
-                    <li>Design desktop e mobile</li>
-                    <li>Testi e immagini forniti da te</li>
-                    <li>Contatti, WhatsApp o mappa</li>
-                    <li>Sviluppo e pubblicazione</li>
-                    <li>Revisioni concordate</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3><span>+</span>Si quota a parte</h3>
-                  <ul>
-                    <li>Più pagine o lingue</li>
-                    <li>Booking o e-commerce</li>
-                    <li>Logo e identità visiva</li>
-                    <li>Testi o foto da produrre</li>
-                    <li>Funzioni su misura</li>
-                    <li>Gestione continuativa</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="compact-bottom"><p><strong>Niente sorprese:</strong> ogni extra viene definito e approvato prima di iniziare.</p></div>
             </div>
           </div>
+          <aside class="editorial-list">
+            <div>
+              <p class="kicker">Il pacchetto comprende</p>
+              <ul>
+                <li>Struttura di una pagina su misura</li>
+                <li>Design desktop e mobile</li>
+                <li>Inserimento di testi e immagini forniti</li>
+                <li>Contatti diretti e mappa</li>
+                <li>Sviluppo e pubblicazione</li>
+                <li>Revisioni concordate</li>
+              </ul>
+            </div>
+            <div class="outside">
+              <strong>Si quota a parte solo ciò che esce dal pacchetto.</strong>
+              <p>Più pagine o lingue, e-commerce, booking, logo, testi o fotografie da produrre e funzioni personalizzate.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="option font-choice font-b4" id="b4">
+        <div class="option-label"><span>B4 · Plus Jakarta Sans + Playfair Display</span><span>Premium e classica</span></div>
+        <div class="editorial">
+          <div class="editorial-main">
+            <p class="kicker">Un sito essenziale, non un sito generico</p>
+            <h2>Tutto quello che serve.<br /><em>Niente sorprese.</em></h2>
+            <div class="promise">
+              <strong>€300</strong>
+              <div>
+                <p>È il prezzo completo del pacchetto, non il punto da cui iniziare a sommare costi.</p>
+                <small>Prima di iniziare definiamo insieme il perimetro. Se resta quello descritto qui, il prezzo non cambia.</small>
+              </div>
+            </div>
+          </div>
+          <aside class="editorial-list">
+            <div>
+              <p class="kicker">Il pacchetto comprende</p>
+              <ul>
+                <li>Struttura di una pagina su misura</li>
+                <li>Design desktop e mobile</li>
+                <li>Inserimento di testi e immagini forniti</li>
+                <li>Contatti diretti e mappa</li>
+                <li>Sviluppo e pubblicazione</li>
+                <li>Revisioni concordate</li>
+              </ul>
+            </div>
+            <div class="outside">
+              <strong>Si quota a parte solo ciò che esce dal pacchetto.</strong>
+              <p>Più pagine o lingue, e-commerce, booking, logo, testi o fotografie da produrre e funzioni personalizzate.</p>
+            </div>
+          </aside>
         </div>
       </section>
     </main>
 
     <footer class="page-end">
-      <span>Fine confronto · A / B / C / D</span>
+      <span>Fine confronto · B1 / B2 / B3 / B4</span>
       <a href="#">Torna all’inizio ↑</a>
     </footer>
   </body>
