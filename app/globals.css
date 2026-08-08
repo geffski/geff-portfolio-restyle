@@ -964,6 +964,246 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .motion-progress { display: none; }
 }
 
+/* ----------------------------- Palette comparison clone ----------------------------- */
+
+.motion-shell--palette {
+  --palette-accent: #2558ff;
+  --palette-accent-deep: #193cb5;
+  --palette-ink: #11182b;
+  --palette-dark: #0d1322;
+  --palette-dark-soft: #141d32;
+  --palette-paper: #f4f0e7;
+  --palette-paper-alt: #ebe5d8;
+  --palette-surface: #dfd8ca;
+  --palette-card: #faf7f0;
+  --palette-text: #11182b;
+  --palette-muted: #625f59;
+  --palette-line: #bdb6a9;
+  --palette-dark-text: #f4f0e7;
+  --palette-dark-muted: #9da5b8;
+  --palette-dark-line: #34405a;
+  --palette-on-accent: #fff;
+  --palette-on-accent-muted: rgba(255,255,255,.8);
+  min-height: 100%;
+  background: var(--palette-paper);
+}
+.motion-shell--palette[data-palette="forest"] {
+  --palette-accent: #326b54;
+  --palette-accent-deep: #224b3a;
+  --palette-ink: #16251e;
+  --palette-dark: #101b17;
+  --palette-dark-soft: #182820;
+  --palette-paper: #f1eddf;
+  --palette-paper-alt: #e7e2d2;
+  --palette-surface: #d4ddcf;
+  --palette-card: #f8f5e9;
+  --palette-text: #16251e;
+  --palette-muted: #5f655e;
+  --palette-line: #b8b9ae;
+  --palette-dark-text: #f1eddf;
+  --palette-dark-muted: #99a99f;
+  --palette-dark-line: #32463d;
+}
+.motion-shell--palette[data-palette="bordeaux"] {
+  --palette-accent: #a9434d;
+  --palette-accent-deep: #793039;
+  --palette-ink: #2b1719;
+  --palette-dark: #211214;
+  --palette-dark-soft: #301a1d;
+  --palette-paper: #f3eadc;
+  --palette-paper-alt: #eadcca;
+  --palette-surface: #decbb6;
+  --palette-card: #faf3e8;
+  --palette-text: #2b1719;
+  --palette-muted: #6d5e59;
+  --palette-line: #c4aea0;
+  --palette-dark-text: #f3eadc;
+  --palette-dark-muted: #b9a09d;
+  --palette-dark-line: #553438;
+}
+.motion-shell--palette[data-palette="plum"] {
+  --palette-accent: #6d52c9;
+  --palette-accent-deep: #4e3997;
+  --palette-ink: #241a2d;
+  --palette-dark: #1a1421;
+  --palette-dark-soft: #281e32;
+  --palette-paper: #f0edf5;
+  --palette-paper-alt: #e6e0ee;
+  --palette-surface: #d8d0e4;
+  --palette-card: #f8f5fb;
+  --palette-text: #241a2d;
+  --palette-muted: #655e6b;
+  --palette-line: #b9b0c2;
+  --palette-dark-text: #f0edf5;
+  --palette-dark-muted: #aaa0b4;
+  --palette-dark-line: #43374f;
+}
+
+.motion-shell--palette .motion-progress,
+.motion-shell--palette .motion-mark b::after,
+.motion-shell--palette .motion-header nav a::after,
+.motion-shell--palette .motion-method-line i,
+.motion-shell--palette .motion-about-art > i,
+.motion-shell--palette .motion-whatsapp-direct > i,
+.motion-shell--palette .motion-form button { background: var(--palette-accent); }
+.motion-shell--palette .motion-header,
+.motion-shell--palette .motion-menu { background: color-mix(in srgb,var(--palette-dark) 88%,transparent); color: var(--palette-dark-text); }
+.motion-shell--palette .motion-mark { color: var(--palette-dark-text); }
+.motion-shell--palette .motion-mark small { color: var(--palette-dark-muted); }
+.motion-shell--palette .motion-burger i { background: var(--palette-dark-text); }
+.motion-shell--palette .motion-menu a { border-color: var(--palette-dark-line); color: var(--palette-dark-text); }
+.motion-shell--palette .motion-menu a:active,
+.motion-shell--palette .motion-header nav a:hover { color: var(--palette-accent); }
+
+.motion-shell--palette .motion-hero { background: var(--palette-accent); color: var(--palette-on-accent); }
+.motion-shell--palette .motion-hero-ghost { color: color-mix(in srgb,var(--palette-accent-deep) 36%,transparent); }
+.motion-shell--palette .motion-hero-kicker,
+.motion-shell--palette .motion-hero-intro { color: var(--palette-on-accent-muted); }
+.motion-shell--palette .motion-title-block h1 em { color: var(--palette-ink); }
+.motion-shell--palette .motion-hero-actions a { border-color: var(--palette-paper); background: var(--palette-paper); color: var(--palette-ink); }
+.motion-shell--palette .motion-hero-actions a:hover { border-color: var(--palette-ink); background: var(--palette-ink); color: var(--palette-paper); }
+.motion-shell--palette .motion-price-badge { background: var(--palette-ink); color: var(--palette-paper); }
+.motion-shell--palette .motion-hero-facts { border-color: color-mix(in srgb,var(--palette-on-accent) 55%,transparent); }
+
+.motion-shell--palette .motion-intro,
+.motion-shell--palette .motion-work,
+.motion-shell--palette .motion-testimonials,
+.motion-shell--palette .motion-faq { background: var(--palette-paper); color: var(--palette-text); }
+.motion-shell--palette .motion-offer,
+.motion-shell--palette .motion-about { background: var(--palette-paper-alt); color: var(--palette-text); }
+.motion-shell--palette .motion-offer-scope { background: var(--palette-surface); }
+.motion-shell--palette .motion-testimonial-grid blockquote { border-color: var(--palette-line); background: var(--palette-card); }
+.motion-shell--palette .motion-label,
+.motion-shell--palette .motion-work-heading > span,
+.motion-shell--palette .motion-work-row > span:first-child,
+.motion-shell--palette .motion-work-row > div small,
+.motion-shell--palette .motion-testimonial-grid footer small,
+.motion-shell--palette .motion-faq-list summary span { color: var(--palette-muted); }
+.motion-shell--palette .motion-intro-grid p,
+.motion-shell--palette .motion-work-row > p,
+.motion-shell--palette .motion-offer-promise small,
+.motion-shell--palette .motion-offer-scope li span,
+.motion-shell--palette .motion-offer-revisions p,
+.motion-shell--palette .motion-offer-extras p,
+.motion-shell--palette .motion-offer-extras small,
+.motion-shell--palette .motion-about-copy > p:not(.motion-label),
+.motion-shell--palette .motion-faq-list details > p { color: var(--palette-muted); }
+.motion-shell--palette .motion-work-heading,
+.motion-shell--palette .motion-work-row,
+.motion-shell--palette .motion-offer-main,
+.motion-shell--palette .motion-offer-promise,
+.motion-shell--palette .motion-offer-scope li,
+.motion-shell--palette .motion-testimonial-grid blockquote,
+.motion-shell--palette .motion-testimonial-grid footer,
+.motion-shell--palette .motion-about-art,
+.motion-shell--palette .motion-faq-list,
+.motion-shell--palette .motion-faq-list details { border-color: var(--palette-line); }
+.motion-shell--palette .motion-pill,
+.motion-shell--palette .motion-about-copy > div span { border-color: var(--palette-line); }
+.motion-shell--palette .motion-pill > span,
+.motion-shell--palette .motion-pill:hover { background: var(--palette-ink); color: var(--palette-paper); }
+.motion-shell--palette .motion-pill:hover > span { background: var(--palette-accent); }
+.motion-shell--palette .motion-offer-revisions { border-color: var(--palette-ink); }
+.motion-shell--palette .motion-intro h2 em,
+.motion-shell--palette .motion-work-row h3 sup,
+.motion-shell--palette .motion-work-row:hover h3,
+.motion-shell--palette .motion-offer-main h2 em,
+.motion-shell--palette .motion-method-sticky h2 em,
+.motion-shell--palette .motion-method-list li > span:first-child,
+.motion-shell--palette .motion-testimonial-grid blockquote > span,
+.motion-shell--palette .motion-faq-list details[open] summary i,
+.motion-shell--palette .motion-footer a:hover { color: var(--palette-accent); }
+.motion-shell--palette .motion-offer-extras { border-color: var(--palette-accent); }
+.motion-shell--palette .motion-draft-warning { border-color: var(--palette-accent); color: var(--palette-accent); }
+
+.motion-shell--palette .motion-method,
+.motion-shell--palette .motion-contact,
+.motion-shell--palette .motion-footer { background: var(--palette-dark); color: var(--palette-dark-text); }
+.motion-shell--palette .motion-method-list li::before { background: var(--palette-dark-soft); }
+.motion-shell--palette .motion-method-line,
+.motion-shell--palette .motion-method-list,
+.motion-shell--palette .motion-method-list li,
+.motion-shell--palette .motion-whatsapp-direct,
+.motion-shell--palette .motion-form label,
+.motion-shell--palette .motion-footer { border-color: var(--palette-dark-line); }
+.motion-shell--palette .motion-method-list p,
+.motion-shell--palette .motion-contact-copy > p:not(.motion-label),
+.motion-shell--palette .motion-form label > span,
+.motion-shell--palette .motion-form input::placeholder,
+.motion-shell--palette .motion-form textarea::placeholder,
+.motion-shell--palette .motion-form > small,
+.motion-shell--palette .motion-contact-placeholder,
+.motion-shell--palette .motion-footer { color: var(--palette-dark-muted); }
+.motion-shell--palette .motion-method .motion-label,
+.motion-shell--palette .motion-contact .motion-label { color: var(--palette-dark-muted); }
+.motion-shell--palette .motion-method-list li:hover > .motion-signal { color: var(--palette-accent); }
+.motion-shell--palette .motion-whatsapp-direct:hover { border-color: var(--palette-accent); background: var(--palette-dark-soft); }
+.motion-shell--palette .motion-form label:focus-within { border-color: var(--palette-accent); }
+.motion-shell--palette .motion-form button:hover { background: var(--palette-dark-text); color: var(--palette-dark); }
+
+.motion-shell--palette .motion-about-art { background: var(--palette-ink); color: var(--palette-paper); }
+.motion-shell--palette .motion-about-art > span { -webkit-text-stroke-color: var(--palette-paper); }
+.motion-shell--palette .motion-about-art:hover > span { color: var(--palette-paper); }
+.motion-shell--palette .motion-site a:focus-visible,
+.motion-shell--palette .motion-site button:focus-visible,
+.motion-shell--palette .motion-site summary:focus-visible,
+.motion-shell--palette .motion-header a:focus-visible,
+.motion-shell--palette .motion-burger:focus-visible { outline-color: var(--palette-accent); }
+.motion-shell--palette .motion-site ::selection { background: var(--palette-accent); color: var(--palette-on-accent); }
+
+.motion-palette-switcher {
+  position: fixed;
+  z-index: 300;
+  right: 20px;
+  bottom: 20px;
+  display: grid;
+  grid-template-columns: minmax(145px,1fr) auto auto;
+  gap: 14px;
+  align-items: center;
+  min-width: min(620px,calc(100vw - 40px));
+  padding: 10px 11px 10px 16px;
+  border: 1px solid color-mix(in srgb,var(--palette-line) 72%,transparent);
+  border-radius: 18px;
+  background: color-mix(in srgb,var(--palette-card) 91%,transparent);
+  color: var(--palette-ink);
+  box-shadow: 0 18px 55px rgba(0,0,0,.2);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+.motion-palette-current { min-width: 0; }
+.motion-palette-current small { display: block; color: var(--palette-muted); font-size: 7px; letter-spacing: .16em; text-transform: uppercase; }
+.motion-palette-current strong { display: block; margin-top: 4px; overflow: hidden; font-size: 12px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.motion-palette-options { display: flex; gap: 5px; }
+.motion-palette-options button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 48px;
+  min-height: 34px;
+  padding: 6px 9px;
+  border: 1px solid var(--palette-line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--palette-ink);
+  font: inherit;
+  font-size: 9px;
+  cursor: pointer;
+}
+.motion-palette-options button i { width: 9px; height: 9px; border-radius: 50%; background: var(--choice-color); }
+.motion-palette-options button[data-palette-choice="cobalt"] { --choice-color: #2558ff; }
+.motion-palette-options button[data-palette-choice="forest"] { --choice-color: #326b54; }
+.motion-palette-options button[data-palette-choice="bordeaux"] { --choice-color: #a9434d; }
+.motion-palette-options button[data-palette-choice="plum"] { --choice-color: #6d52c9; }
+.motion-palette-options button[aria-pressed="true"] { border-color: var(--palette-ink); background: var(--palette-ink); color: var(--palette-paper); }
+.motion-palette-switcher > a { padding: 10px 12px; border-radius: 10px; background: var(--palette-accent); color: var(--palette-on-accent); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+
+@media (max-width: 700px) {
+  .motion-palette-switcher { left: 10px; right: 10px; bottom: 10px; grid-template-columns: minmax(100px,1fr) auto; min-width: 0; padding: 9px 10px 9px 13px; }
+  .motion-palette-options { order: 3; grid-column: 1 / -1; }
+  .motion-palette-options button { flex: 1; justify-content: center; }
+  .motion-palette-switcher > a { justify-self: end; }
+}
+
 /* ----------------------------- Concept 04 / Studio ----------------------------- */
 
 .studio-site {

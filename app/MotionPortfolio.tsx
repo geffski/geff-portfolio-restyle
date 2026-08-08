@@ -1,8 +1,16 @@
 "use client";
 
 import { FormEvent, PointerEvent, useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const WHATSAPP_NUMBER = "000000000000";
+
+const paletteOptions = [
+  { id: "cobalt", number: "P1", name: "Cobalto + Osso" },
+  { id: "forest", number: "P2", name: "Foresta + Lino" },
+  { id: "bordeaux", number: "P3", name: "Bordeaux + Sabbia" },
+  { id: "plum", number: "P4", name: "Prugna + Nebbia" },
+];
 
 const projects = [
   {
@@ -93,10 +101,12 @@ function Signal() {
   return <span className="motion-signal" aria-hidden="true"><i /></span>;
 }
 
-export default function MotionPortfolio() {
+export default function MotionPortfolio({ palettePreview = false }: { palettePreview?: boolean }) {
   const rootRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [palette, setPalette] = useState(paletteOptions[0].id);
   const directWhatsAppUrl = whatsappUrl("Ciao Geff, vorrei parlarti di un sito web.");
+  const activePalette = paletteOptions.find((option) => option.id === palette) ?? paletteOptions[0];
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -163,9 +173,37 @@ export default function MotionPortfolio() {
   };
 
   return (
-    <>
+    <div
+      className={`motion-shell${palettePreview ? " motion-shell--palette" : ""}`}
+      data-palette={palettePreview ? palette : undefined}
+    >
       <div className="motion-progress" aria-hidden="true" />
       <div className="motion-grain" aria-hidden="true" />
+
+      {palettePreview && (
+        <aside className="motion-palette-switcher" aria-label="Confronta le palette del sito">
+          <div className="motion-palette-current">
+            <small>Palette lab</small>
+            <strong>{activePalette.name}</strong>
+          </div>
+          <div className="motion-palette-options" role="group" aria-label="Scegli una palette">
+            {paletteOptions.map((option) => (
+              <button
+                key={option.id}
+                type="button"
+                data-palette-choice={option.id}
+                aria-label={`${option.number} · ${option.name}`}
+                aria-pressed={palette === option.id}
+                onClick={() => setPalette(option.id)}
+              >
+                <i aria-hidden="true" />
+                <span>{option.number}</span>
+              </button>
+            ))}
+          </div>
+          <Link href="/">Sito live ↗</Link>
+        </aside>
+      )}
 
       {menuOpen && (
         <nav className="motion-menu" aria-label="Navigazione principale mobile">
@@ -389,6 +427,6 @@ export default function MotionPortfolio() {
           <span>© 2026 Geff</span><span>Modena · CET</span><a href="#inizio">Torna su ↑</a>
         </footer>
       </main>
-    </>
+    </div>
   );
 }
