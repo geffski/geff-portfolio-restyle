@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Confronto font per l’offerta · Geff</title>
+    <title>Proposta B2 · Contenuto dell’offerta · Geff</title>
     <meta
       name="description"
-      content="Quattro direzioni tipografiche per la sezione editoriale del sito essenziale."
+      content="Proposta B2 con il contenuto aggiornato dell’offerta per un sito statico da 300 euro."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;family=DM+Serif+Display&amp;family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;family=DM+Serif+Display&amp;display=swap"
       rel="stylesheet"
     />
     <style>
@@ -29,7 +29,7 @@
         margin: 0;
         background: var(--ink);
         color: var(--ink);
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: "DM Sans", Arial, Helvetica, sans-serif;
         -webkit-font-smoothing: antialiased;
       }
       a { color: inherit; text-decoration: none; }
@@ -88,7 +88,7 @@
         letter-spacing: -0.075em;
         line-height: 0.88;
       }
-      .intro h1 em { color: var(--blue); font-family: Georgia, serif; font-weight: 400; }
+      .intro h1 em { color: var(--blue); font-family: "DM Serif Display", Georgia, serif; font-weight: 400; }
       .intro-note { max-width: 430px; margin: 32px 0 0; color: #555; font-size: 16px; line-height: 1.55; }
 
       .option { min-height: 100vh; scroll-margin-top: 70px; }
@@ -201,6 +201,18 @@
       .font-b4 .editorial { font-family: "Plus Jakarta Sans", Arial, sans-serif; }
       .font-b4 .editorial h2 { font-weight: 500; letter-spacing: -0.06em; }
       .font-b4 .editorial h2 em { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 600; }
+      .content-draft .editorial { font-family: "DM Sans", Arial, sans-serif; }
+      .content-draft .editorial h2 { font-weight: 500; letter-spacing: -0.06em; }
+      .content-draft .editorial h2 em { font-family: "DM Serif Display", Georgia, serif; font-style: normal; }
+      .content-draft .editorial-list ul { margin-top: 42px; counter-reset: none; }
+      .content-draft .editorial-list li { display: block; padding: 18px 0; }
+      .content-draft .editorial-list li::before { display: none; }
+      .content-draft .editorial-list li strong { display: block; margin-bottom: 7px; font-size: 16px; font-weight: 600; letter-spacing: -0.02em; }
+      .content-draft .editorial-list li span { display: block; color: #646460; font-size: 13px; line-height: 1.5; }
+      .revision-note { margin-top: 42px; padding: 22px; border: 1px solid var(--ink); }
+      .revision-note strong { display: block; margin-bottom: 10px; font-size: 15px; }
+      .revision-note p { margin: 0; color: #5d5d5a; font-size: 13px; line-height: 1.55; }
+      .scope-note { display: block; margin-top: 16px; color: #6b6b67; font-size: 11px; line-height: 1.5; }
 
       /* C — proposal */
       .option-c { background: #111; color: white; }
@@ -331,155 +343,51 @@
   <body>
     <header class="topbar">
       <div class="brand"><strong>Geff</strong><span>Web designer</span></div>
-      <p>Opzione B · Confronto tipografico</p>
-      <nav aria-label="Vai a una proposta tipografica">
-        <a href="#b1" aria-label="Font B1">1</a>
-        <a href="#b2" aria-label="Font B2">2</a>
-        <a href="#b3" aria-label="Font B3">3</a>
-        <a href="#b4" aria-label="Font B4">4</a>
-      </nav>
+      <p>Opzione B2 · Contenuto aggiornato</p>
+      <nav aria-label="Navigazione della proposta"><a href="#offerta" aria-label="Vai all’offerta">↓</a></nav>
     </header>
 
     <main>
       <section class="intro">
         <div>
-          <p class="eyebrow">Opzione B confermata · 4 font</p>
-          <p class="intro-note">Layout, colori e contenuti restano identici. Cambia soltanto la coppia tipografica, così puoi scegliere senza altre variabili.</p>
+          <p class="eyebrow">Direzione B2 · Seconda bozza</p>
+          <p class="intro-note">La proposta non elenca sei feature isolate: presenta un sito statico completo e chiarisce dove finisce il lavoro incluso.</p>
         </div>
-        <h1>Quale voce diamo<br /><em>all’offerta?</em></h1>
+        <h1>Un’offerta semplice<br /><em>da capire.</em></h1>
       </section>
 
-      <section class="option font-choice font-b1" id="b1">
-        <div class="option-label"><span>B1 · Manrope</span><span>Moderna e uniforme</span></div>
+      <section class="option content-draft" id="offerta">
+        <div class="option-label"><span>Proposta B2 · DM Sans + DM Serif Display</span><span>Contenuto aggiornato</span></div>
         <div class="editorial">
           <div class="editorial-main">
-            <p class="kicker">Un sito essenziale, non un sito generico</p>
-            <h2>Tutto quello che serve.<br /><em>Niente sorprese.</em></h2>
+            <p class="kicker">Un sito statico, fatto bene</p>
+            <h2>Semplice nella struttura.<br /><em>Completo in tutto il resto.</em></h2>
             <div class="promise">
               <strong>€300</strong>
               <div>
-                <p>È il prezzo completo del pacchetto, non il punto da cui iniziare a sommare costi.</p>
-                <small>Prima di iniziare definiamo insieme il perimetro. Se resta quello descritto qui, il prezzo non cambia.</small>
+                <p>Realizzo il sito statico concordato, in una lingua, con tutto ciò che normalmente serve per presentare bene la tua attività.</p>
+                <small>Definiamo insieme pagine, sezioni e funzioni prima di iniziare. Finché il progetto resta in quel perimetro, il prezzo resta €300.</small>
               </div>
             </div>
           </div>
           <aside class="editorial-list">
             <div>
-              <p class="kicker">Il pacchetto comprende</p>
+              <p class="kicker">Cosa significa “sito completo”</p>
               <ul>
-                <li>Struttura di una pagina su misura</li>
-                <li>Design desktop e mobile</li>
-                <li>Inserimento di testi e immagini forniti</li>
-                <li>Contatti diretti e mappa</li>
-                <li>Sviluppo e pubblicazione</li>
-                <li>Revisioni concordate</li>
+                <li><strong>Design su ogni dispositivo</strong><span>Il sito si adatta a desktop, tablet e smartphone.</span></li>
+                <li><strong>Testi e contenuti</strong><span>Scrivo o adatto i testi e organizzo immagini, materiali e logo esistente.</span></li>
+                <li><strong>Funzioni essenziali</strong><span>Form di contatto, pulsanti, link e Google Maps incorporata, quando servono.</span></li>
+                <li><strong>Sviluppo e pubblicazione</strong><span>Costruisco, controllo e porto online il sito concordato.</span></li>
               </ul>
-            </div>
-            <div class="outside">
-              <strong>Si quota a parte solo ciò che esce dal pacchetto.</strong>
-              <p>Più pagine o lingue, e-commerce, booking, logo, testi o fotografie da produrre e funzioni personalizzate.</p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="option font-choice font-b2" id="b2">
-        <div class="option-label"><span>B2 · DM Sans + DM Serif Display</span><span>Morbida e professionale</span></div>
-        <div class="editorial">
-          <div class="editorial-main">
-            <p class="kicker">Un sito essenziale, non un sito generico</p>
-            <h2>Tutto quello che serve.<br /><em>Niente sorprese.</em></h2>
-            <div class="promise">
-              <strong>€300</strong>
-              <div>
-                <p>È il prezzo completo del pacchetto, non il punto da cui iniziare a sommare costi.</p>
-                <small>Prima di iniziare definiamo insieme il perimetro. Se resta quello descritto qui, il prezzo non cambia.</small>
+              <div class="revision-note">
+                <strong>Le piccole modifiche sono comprese.</strong>
+                <p>Correggere un testo, cambiare un’immagine o rifinire un dettaglio fa parte del lavoro: non diventa automaticamente un costo extra.</p>
               </div>
             </div>
-          </div>
-          <aside class="editorial-list">
-            <div>
-              <p class="kicker">Il pacchetto comprende</p>
-              <ul>
-                <li>Struttura di una pagina su misura</li>
-                <li>Design desktop e mobile</li>
-                <li>Inserimento di testi e immagini forniti</li>
-                <li>Contatti diretti e mappa</li>
-                <li>Sviluppo e pubblicazione</li>
-                <li>Revisioni concordate</li>
-              </ul>
-            </div>
             <div class="outside">
-              <strong>Si quota a parte solo ciò che esce dal pacchetto.</strong>
-              <p>Più pagine o lingue, e-commerce, booking, logo, testi o fotografie da produrre e funzioni personalizzate.</p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="option font-choice font-b3" id="b3">
-        <div class="option-label"><span>B3 · Space Grotesk + Instrument Serif</span><span>Creativa e distintiva</span></div>
-        <div class="editorial">
-          <div class="editorial-main">
-            <p class="kicker">Un sito essenziale, non un sito generico</p>
-            <h2>Tutto quello che serve.<br /><em>Niente sorprese.</em></h2>
-            <div class="promise">
-              <strong>€300</strong>
-              <div>
-                <p>È il prezzo completo del pacchetto, non il punto da cui iniziare a sommare costi.</p>
-                <small>Prima di iniziare definiamo insieme il perimetro. Se resta quello descritto qui, il prezzo non cambia.</small>
-              </div>
-            </div>
-          </div>
-          <aside class="editorial-list">
-            <div>
-              <p class="kicker">Il pacchetto comprende</p>
-              <ul>
-                <li>Struttura di una pagina su misura</li>
-                <li>Design desktop e mobile</li>
-                <li>Inserimento di testi e immagini forniti</li>
-                <li>Contatti diretti e mappa</li>
-                <li>Sviluppo e pubblicazione</li>
-                <li>Revisioni concordate</li>
-              </ul>
-            </div>
-            <div class="outside">
-              <strong>Si quota a parte solo ciò che esce dal pacchetto.</strong>
-              <p>Più pagine o lingue, e-commerce, booking, logo, testi o fotografie da produrre e funzioni personalizzate.</p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="option font-choice font-b4" id="b4">
-        <div class="option-label"><span>B4 · Plus Jakarta Sans + Playfair Display</span><span>Premium e classica</span></div>
-        <div class="editorial">
-          <div class="editorial-main">
-            <p class="kicker">Un sito essenziale, non un sito generico</p>
-            <h2>Tutto quello che serve.<br /><em>Niente sorprese.</em></h2>
-            <div class="promise">
-              <strong>€300</strong>
-              <div>
-                <p>È il prezzo completo del pacchetto, non il punto da cui iniziare a sommare costi.</p>
-                <small>Prima di iniziare definiamo insieme il perimetro. Se resta quello descritto qui, il prezzo non cambia.</small>
-              </div>
-            </div>
-          </div>
-          <aside class="editorial-list">
-            <div>
-              <p class="kicker">Il pacchetto comprende</p>
-              <ul>
-                <li>Struttura di una pagina su misura</li>
-                <li>Design desktop e mobile</li>
-                <li>Inserimento di testi e immagini forniti</li>
-                <li>Contatti diretti e mappa</li>
-                <li>Sviluppo e pubblicazione</li>
-                <li>Revisioni concordate</li>
-              </ul>
-            </div>
-            <div class="outside">
-              <strong>Si quota a parte solo ciò che esce dal pacchetto.</strong>
-              <p>Più pagine o lingue, e-commerce, booking, logo, testi o fotografie da produrre e funzioni personalizzate.</p>
+              <strong>Si quota a parte quando cambia il progetto.</strong>
+              <p>Nuove pagine o sezioni richieste dopo l’accordo, restyling completo, e-commerce, sito multilingua, sistema di prenotazione, creazione del logo o funzioni personalizzate.</p>
+              <small class="scope-note">Gli eventuali costi di dominio e hosting restano separati.</small>
             </div>
           </aside>
         </div>
@@ -487,7 +395,7 @@
     </main>
 
     <footer class="page-end">
-      <span>Fine confronto · B1 / B2 / B3 / B4</span>
+      <span>Proposta B2 · Contenuto da approvare</span>
       <a href="#">Torna all’inizio ↑</a>
     </footer>
   </body>
