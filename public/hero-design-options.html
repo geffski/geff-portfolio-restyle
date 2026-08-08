@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proposte hero · Geff</title>
+    <meta name="description" content="Quattro direzioni di design per la prima schermata del portfolio di Geff." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet" />
+    <style>
+      :root { --blue: #2558ff; --ink: #101011; --paper: #f5f4ef; --muted: #a7a7a4; }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; background: var(--ink); color: white; font-family: "DM Sans", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+      a { color: inherit; text-decoration: none; }
+      .topbar { position: sticky; z-index: 20; top: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 70px; padding: 12px 4vw; border-bottom: 1px solid rgba(255,255,255,.17); background: rgba(16,16,17,.92); backdrop-filter: blur(15px); }
+      .brand { font-size: 24px; font-weight: 600; letter-spacing: -.06em; }
+      .topbar > span { color: #888; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+      .topbar nav { justify-self: end; display: flex; gap: 7px; }
+      .topbar nav a { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid #555; border-radius: 50%; font-size: 10px; transition: .25s ease; }
+      .topbar nav a:hover { border-color: var(--blue); background: var(--blue); }
+      .intro { display: grid; grid-template-columns: .7fr 1.3fr; gap: 8vw; align-items: end; min-height: 50vh; padding: 90px 7vw 95px; background: var(--paper); color: var(--ink); }
+      .eyebrow,.label { margin: 0; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; }
+      .intro p:last-child { max-width: 430px; margin: 27px 0 0; color: #62625f; font-size: 16px; line-height: 1.55; }
+      .intro h1 { margin: 0; font-size: clamp(62px,8vw,128px); line-height: .86; letter-spacing: -.075em; font-weight: 500; }
+      .intro h1 em { color: var(--blue); font-family: "DM Serif Display",Georgia,serif; font-style: normal; font-weight: 400; }
+      .option { min-height: 100svh; scroll-margin-top: 70px; }
+      .option-head { position: relative; z-index: 6; display: flex; justify-content: space-between; gap: 20px; padding: 18px 4vw; border-bottom: 1px solid currentColor; font-size: 9px; letter-spacing: .15em; text-transform: uppercase; }
+      .option-head span:last-child { opacity: .55; }
+      .cta { display: inline-flex; align-items: center; min-height: 46px; padding: 12px 20px; border-radius: 999px; background: var(--blue); color: white; font-size: 13px; }
+
+      /* A — map retained, better integrated */
+      .hero-a { position: relative; min-height: calc(100svh - 52px); overflow: hidden; background: #0e0e0f; }
+      .hero-a::before { content: ""; position: absolute; inset: 0; opacity: .18; background-image: radial-gradient(#5a5a5a 1px,transparent 1px); background-size: 7px 7px; }
+      .a-map { position: absolute; inset: 4% -3% 0 33%; display: grid; place-items: center; }
+      .a-map img { width: min(88vw,1400px); max-width: none; filter: drop-shadow(0 42px 45px rgba(0,0,0,.6)); transform: rotate(-2deg); }
+      .a-map::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,#0e0e0f 0,transparent 21%,transparent 82%,#0e0e0f 100%); pointer-events: none; }
+      .a-copy { position: relative; z-index: 4; width: min(610px,42vw); padding: 12vh 0 7vh 5vw; }
+      .a-copy h2 { margin: 26px 0 30px; font-size: clamp(64px,6.2vw,106px); line-height: .83; letter-spacing: -.075em; font-weight: 500; }
+      .a-copy h2 em { display: block; color: var(--blue); font-family: "DM Serif Display",Georgia,serif; font-style: normal; font-weight: 400; }
+      .a-copy > p:not(.label) { max-width: 420px; margin: 0 0 28px; color: #aaa; font-size: 16px; line-height: 1.55; }
+      .a-badge { position: absolute; z-index: 5; right: 4vw; bottom: 5vh; display: grid; width: 150px; height: 150px; place-items: center; border-radius: 50%; background: var(--blue); text-align: center; transform: rotate(7deg); }
+      .a-badge strong { display: block; font-size: 39px; letter-spacing: -.07em; }
+      .a-badge span { display: block; font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
+
+      /* B — no imagery */
+      .option-b { background: var(--blue); }
+      .hero-b { position: relative; min-height: calc(100svh - 52px); overflow: hidden; padding: 8vh 5vw 5vh; }
+      .b-ghost { position: absolute; left: -1vw; bottom: -10vh; color: rgba(0,0,0,.12); font-size: clamp(180px,28vw,520px); line-height: .72; letter-spacing: -.1em; font-weight: 600; white-space: nowrap; }
+      .b-top { position: relative; z-index: 2; display: grid; grid-template-columns: .65fr 1.35fr; gap: 6vw; align-items: start; }
+      .b-top h2 { max-width: 1050px; margin: 0; font-size: clamp(70px,9.2vw,150px); line-height: .82; letter-spacing: -.08em; font-weight: 500; }
+      .b-top h2 em { color: #101011; font-family: "DM Serif Display",Georgia,serif; font-style: normal; font-weight: 400; }
+      .b-intro { max-width: 390px; padding-top: 12px; }
+      .b-intro p { margin: 28px 0; color: rgba(255,255,255,.78); font-size: 17px; line-height: 1.55; }
+      .b-intro .cta { background: white; color: #111; }
+      .b-bottom { position: absolute; z-index: 3; left: 5vw; right: 5vw; bottom: 5vh; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.5); }
+      .b-bottom span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+      .b-bottom span:last-child { text-align: right; }
+
+      /* C — digital replacement */
+      .option-c { background: #f2f1ec; color: var(--ink); }
+      .hero-c { display: grid; grid-template-columns: .82fr 1.18fr; min-height: calc(100svh - 52px); }
+      .c-copy { display: flex; flex-direction: column; justify-content: space-between; padding: 9vh 5vw 6vh; border-right: 1px solid rgba(17,17,17,.22); }
+      .c-copy h2 { margin: 35px 0 30px; font-size: clamp(66px,7vw,116px); line-height: .84; letter-spacing: -.075em; font-weight: 500; }
+      .c-copy h2 em { color: var(--blue); font-family: "DM Serif Display",Georgia,serif; font-style: normal; font-weight: 400; }
+      .c-copy p:not(.label) { max-width: 430px; margin: 0 0 28px; color: #62625f; font-size: 16px; line-height: 1.55; }
+      .c-meta { display: flex; gap: 25px; color: #747470; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+      .site-stack { position: relative; min-height: 760px; overflow: hidden; background: #dad9d3; }
+      .site-card { position: absolute; width: min(62%,560px); min-height: 460px; padding: 20px; border: 1px solid #111; box-shadow: 18px 24px 0 rgba(17,17,17,.13); }
+      .site-card:nth-child(1) { z-index: 3; left: 11%; top: 10%; background: #d8ddcf; transform: rotate(-5deg); }
+      .site-card:nth-child(2) { z-index: 2; right: 4%; top: 25%; background: #151515; color: white; transform: rotate(6deg); }
+      .site-card:nth-child(3) { z-index: 1; left: 17%; bottom: -18%; background: #e7cb63; transform: rotate(-1deg); }
+      .browser { display: flex; align-items: center; gap: 6px; padding-bottom: 14px; border-bottom: 1px solid currentColor; }
+      .browser i { display: block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+      .browser span { margin-left: auto; font-size: 8px; letter-spacing: .1em; }
+      .site-card small { display: block; margin-top: 55px; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+      .site-card strong { display: block; max-width: 390px; margin-top: 18px; font-size: clamp(38px,4vw,64px); line-height: .9; letter-spacing: -.06em; font-weight: 500; }
+      .site-card b { position: absolute; right: 22px; bottom: 22px; width: 86px; height: 86px; border-radius: 50%; background: var(--blue); }
+      .site-card:nth-child(2) b { border-radius: 0; background: #e84a35; transform: rotate(12deg); }
+      .site-card:nth-child(3) b { background: #3b5a42; }
+
+      /* D — cropped map as editorial detail */
+      .option-d { background: var(--paper); color: var(--ink); }
+      .hero-d { display: grid; grid-template-columns: 1.1fr .9fr; min-height: calc(100svh - 52px); }
+      .d-copy { display: flex; flex-direction: column; justify-content: space-between; padding: 8vh 5vw 6vh; }
+      .d-copy h2 { max-width: 870px; margin: 35px 0; font-size: clamp(74px,8vw,132px); line-height: .81; letter-spacing: -.08em; font-weight: 500; }
+      .d-copy h2 em { color: var(--blue); font-family: "DM Serif Display",Georgia,serif; font-style: normal; font-weight: 400; }
+      .d-footer { display: grid; grid-template-columns: 1fr auto; gap: 35px; align-items: end; padding-top: 22px; border-top: 1px solid rgba(17,17,17,.28); }
+      .d-footer p { max-width: 440px; margin: 0; color: #63635f; font-size: 16px; line-height: 1.55; }
+      .d-price { color: var(--blue); font-size: clamp(70px,7.5vw,120px); line-height: .75; letter-spacing: -.09em; font-weight: 600; }
+      .d-visual { position: relative; overflow: hidden; background: #111; }
+      .d-visual img { position: absolute; left: -37%; top: 5%; width: 190%; max-width: none; height: 90%; object-fit: contain; filter: saturate(.82) contrast(1.05); }
+      .d-visual::after { content: "DESIGN · CONTENUTI · ONLINE"; position: absolute; left: 24px; right: 24px; bottom: 24px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.45); color: white; font-size: 9px; letter-spacing: .14em; }
+      .d-square { position: absolute; z-index: 2; right: 7%; top: 9%; width: 90px; height: 90px; border: 1px solid white; background: var(--blue); mix-blend-mode: screen; transform: rotate(8deg); }
+
+      .end { display: flex; justify-content: space-between; gap: 30px; padding: 30px 4vw; background: #111; color: white; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+      .end a { color: #8fa8ff; }
+
+      @media (max-width: 900px) {
+        .topbar { grid-template-columns: 1fr auto; }
+        .topbar > span { display: none; }
+        .intro,.b-top,.hero-c,.hero-d { grid-template-columns: 1fr; }
+        .intro { gap: 48px; padding: 80px 22px; }
+        .intro h1 { font-size: 64px; }
+        .option-head { padding-inline: 22px; }
+        .hero-a { min-height: 1050px; }
+        .a-copy { width: auto; padding: 90px 22px 0; }
+        .a-copy h2 { font-size: 70px; }
+        .a-map { inset: 42% -28% 3% -12%; }
+        .a-map img { width: 150vw; }
+        .a-badge { width: 120px; height: 120px; right: 22px; bottom: 28px; }
+        .hero-b { min-height: 960px; padding: 80px 22px; }
+        .b-top { gap: 55px; }
+        .b-top h2 { font-size: 72px; }
+        .b-bottom { left: 22px; right: 22px; grid-template-columns: 1fr; }
+        .b-bottom span:last-child { text-align: left; }
+        .c-copy { min-height: 720px; padding: 90px 22px 55px; border-right: 0; border-bottom: 1px solid rgba(17,17,17,.22); }
+        .c-copy h2 { font-size: 70px; }
+        .site-stack { min-height: 740px; }
+        .site-card { width: 72%; }
+        .d-copy { min-height: 760px; padding: 90px 22px 55px; }
+        .d-copy h2 { font-size: 72px; }
+        .d-visual { min-height: 650px; }
+      }
+
+      @media (max-width: 560px) {
+        .topbar { padding-inline: 18px; }
+        .topbar nav a { width: 30px; height: 30px; }
+        .intro h1 { font-size: 52px; }
+        .option-head span:last-child { text-align: right; }
+        .a-copy h2,.b-top h2,.c-copy h2,.d-copy h2 { font-size: 58px; }
+        .a-map { inset: 46% -60% 7% -30%; }
+        .a-map img { width: 190vw; }
+        .b-ghost { bottom: 2vh; }
+        .b-bottom { bottom: 30px; }
+        .site-card { width: 84%; min-height: 410px; }
+        .site-card:nth-child(1) { left: 6%; }
+        .site-card:nth-child(2) { right: -6%; }
+        .d-footer { grid-template-columns: 1fr; }
+        .d-price { font-size: 92px; }
+        .end { flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#">Geff</a>
+      <span>Confronto prima schermata</span>
+      <nav aria-label="Vai a una proposta">
+        <a href="#a">A</a><a href="#b">B</a><a href="#c">C</a><a href="#d">D</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div><p class="eyebrow">4 direzioni · Stesso messaggio</p><p>La prima schermata deve far capire subito cosa fai, per chi lo fai e perché vale la pena continuare.</p></div>
+        <h1>Una prima impressione<br /><em>più forte.</em></h1>
+      </section>
+
+      <section class="option option-a" id="a">
+        <div class="option-head"><span>A · Mappa reintegrata</span><span>Conserva l’asset attuale</span></div>
+        <div class="hero-a">
+          <div class="a-map"><img src="/geff-dark-fold-accordion.png" alt="Portfolio a fisarmonica con dettagli grafici" /></div>
+          <div class="a-copy"><p class="label">Siti web per piccole attività · Modena</p><h2>La tua attività,<em>fatta vedere bene.</em></h2><p>Design, contenuti e pubblicazione. Un sito completo, seguito personalmente dall’inizio alla messa online.</p><a class="cta" href="#fine">Parliamo del tuo sito</a></div>
+          <div class="a-badge"><div><strong>€300</strong><span>Sito statico completo</span></div></div>
+        </div>
+      </section>
+
+      <section class="option option-b" id="b">
+        <div class="option-head"><span>B · Manifesto tipografico</span><span>Nessuna immagine</span></div>
+        <div class="hero-b">
+          <div class="b-ghost">WEB</div>
+          <div class="b-top"><p class="label">Modena · Siti statici completi</p><h2>Siti web che fanno sembrare la tua attività<em> seria.</em></h2><div class="b-intro"><p>Progetto, scrivo e pubblico il tuo sito. Tu parli direttamente con chi fa il lavoro.</p><a class="cta" href="#fine">Iniziamo da WhatsApp</a></div></div>
+          <div class="b-bottom"><span>Desktop · Tablet · Mobile</span><span>Hosting gestito</span><span>€300 · Sito statico</span></div>
+        </div>
+      </section>
+
+      <section class="option option-c" id="c">
+        <div class="option-head"><span>C · Portfolio in primo piano</span><span>Sostituisce la mappa</span></div>
+        <div class="hero-c">
+          <div class="c-copy"><div><p class="label">Siti web senza passaggi di mano</p><h2>Tre attività.<br />Tre siti fatti<em> su misura.</em></h2><p>Dal primo messaggio alla pubblicazione: progetto una presenza online chiara, credibile e facile da usare.</p><a class="cta" href="#fine">Voglio il mio sito</a></div><div class="c-meta"><span>Modena, Italia</span><span>Progetti reali · 2026</span></div></div>
+          <div class="site-stack" aria-label="Tre progetti rappresentativi">
+            <article class="site-card"><div class="browser"><i></i><i></i><i></i><span>serenaprevidi.com</span></div><small>Studio di psicologia</small><strong>Uno spazio digitale calmo e umano.</strong><b></b></article>
+            <article class="site-card"><div class="browser"><i></i><i></i><i></i><span>Alpha Elite</span></div><small>Fitness club</small><strong>Un’identità più forte.</strong><b></b></article>
+            <article class="site-card"><div class="browser"><i></i><i></i><i></i><span>Cargef</span></div><small>Progetto B2B</small><strong>Prodotti presentati con ordine.</strong><b></b></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="option option-d" id="d">
+        <div class="option-head"><span>D · Taglio editoriale</span><span>Mappa usata come dettaglio</span></div>
+        <div class="hero-d">
+          <div class="d-copy"><div><p class="label">Per piccole attività · Modena e dintorni</p><h2>Il sito che ti manca,<em>senza complicazioni.</em></h2></div><div class="d-footer"><div><p>Design, testi, versione mobile e pubblicazione. Seguo personalmente ogni passaggio.</p><a class="cta" href="#fine">Parliamone su WhatsApp</a></div><strong class="d-price">€300</strong></div></div>
+          <div class="d-visual"><span class="d-square" aria-hidden="true"></span><img src="/geff-dark-fold-accordion.png" alt="Dettaglio del portfolio editoriale a fisarmonica" /></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="end" id="fine"><span>Fine confronto · A / B / C / D</span><a href="#">Torna all’inizio ↑</a></footer>
+  </body>
+</html>

@@ -773,6 +773,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .motion-work-row > span:first-child { color: #888; font-size: 11px; }
 .motion-work-row > div { min-width: 0; }
 .motion-work-row h3 { margin: 0; font-size: clamp(43px,5vw,78px); line-height: 1; letter-spacing: -.06em; font-weight: 440; transition: color .3s; }
+.motion-work-row h3 a { display: inline-flex; align-items: flex-start; gap: 10px; }
+.motion-work-row h3 sup { margin-top: .12em; color: #2558ff; font-size: .22em; line-height: 1; letter-spacing: 0; }
 .motion-work-row > div small { display: block; margin-top: 11px; color: #777; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
 .motion-work-row > p { margin: 0; color: #555; font-size: 16px; line-height: 1.5; }
 .motion-work-row:hover h3 { color: #2558ff; }

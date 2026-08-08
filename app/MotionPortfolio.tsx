@@ -10,6 +10,7 @@ const projects = [
     title: "Serena Previdi",
     type: "Studio di psicologia",
     copy: "Uno spazio digitale calmo, chiaro e umano.",
+    url: "https://serenaprevidi.com",
   },
   {
     number: "02",
@@ -259,7 +260,13 @@ export default function MotionPortfolio() {
               >
                 <span>{project.number}</span>
                 <div>
-                  <h3>{project.title}</h3>
+                  <h3>
+                    {project.url ? (
+                      <a href={project.url} target="_blank" rel="noreferrer" aria-label={`Apri il sito di ${project.title}`}>
+                        {project.title}<sup aria-hidden="true">↗</sup>
+                      </a>
+                    ) : project.title}
+                  </h3>
                   <small>{project.type}</small>
                 </div>
                 <p>{project.copy}</p>
