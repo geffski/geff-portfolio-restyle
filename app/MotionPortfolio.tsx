@@ -7,57 +7,21 @@ const WHATSAPP_NUMBER = "000000000000";
 const projects = [
   {
     number: "01",
-    slug: "serena",
     title: "Serena Previdi",
     type: "Studio di psicologia",
-    className: "motion-preview-psych",
-    screenClass: "motion-case-psych",
     copy: "Uno spazio digitale calmo, chiaro e umano.",
-    before:
-      "Serviva presentare competenze, percorsi e studio senza rendere la navigazione fredda o dispersiva.",
-    built:
-      "Un sito professionale responsive con servizi, profilo, immagini dello studio e contatti diretti.",
-    decision:
-      "Tipografia editoriale, palette morbida e molto spazio bianco per sostenere leggibilità e fiducia.",
-    delivery:
-      "Struttura dei contenuti, direzione visiva, sviluppo desktop e mobile, controllo finale.",
-    scope: ["Design", "Sviluppo", "Mobile", "Pubblicazione"],
   },
   {
     number: "02",
-    slug: "alpha-elite",
     title: "Alpha Elite Fitness Club",
     type: "Palestra",
-    className: "motion-preview-gym",
-    screenClass: "motion-case-gym",
     copy: "Un’identità più forte, dentro e fuori dalla palestra.",
-    before:
-      "Orari, tariffe, spazi e servizi avevano bisogno di una gerarchia unica, rapida da consultare anche da telefono.",
-    built:
-      "Una pagina completa con aree di allenamento, personal training, tariffe, orari, mappa e contatti.",
-    decision:
-      "Contrasto deciso, ritmo tipografico e fotografie grandi per comunicare energia senza sacrificare le informazioni.",
-    delivery:
-      "Raccolta dei materiali, anteprima, sviluppo responsive, revisioni e preparazione alla pubblicazione.",
-    scope: ["Restyling", "UX", "Sviluppo", "Mappa"],
   },
   {
     number: "03",
-    slug: "cargef",
     title: "Cargef",
     type: "Progetto B2B di famiglia",
-    className: "motion-preview-cargef",
-    screenClass: "motion-case-cargef",
     copy: "Prodotti autentici, presentati con ordine.",
-    before:
-      "Un assortimento ampio richiedeva una presentazione più ordinata per interlocutori e clienti professionali.",
-    built:
-      "Una direzione digitale B2B con categorie leggibili, racconto aziendale e percorso chiaro verso la richiesta.",
-    decision:
-      "Categorie visive e gerarchie nette per rendere il catalogo comprensibile prima ancora di entrare nel dettaglio.",
-    delivery:
-      "Confronto diretto con lo stakeholder di famiglia, organizzazione dei contenuti e prototipo responsive.",
-    scope: ["B2B", "Struttura", "Design", "Prototipo"],
   },
 ];
 
@@ -96,7 +60,7 @@ const faq = [
   {
     question: "Chi gestisce l’hosting?",
     answer:
-      "Ti consiglio una soluzione adatta al sito e mi occupo della configurazione tecnica. Gli eventuali costi del servizio di hosting non sono inclusi nel prezzo di partenza.",
+      "Ti consiglio una soluzione adatta al sito e mi occupo della configurazione tecnica. Gli eventuali costi del servizio di hosting non sono inclusi nel pacchetto da €300.",
   },
   {
     question: "Posso chiedere modifiche?",
@@ -126,10 +90,6 @@ function whatsappUrl(message: string) {
 
 function Signal() {
   return <span className="motion-signal" aria-hidden="true"><i /></span>;
-}
-
-function WorkCue() {
-  return <span className="motion-work-cue" aria-hidden="true"><i /><b>APRI</b></span>;
 }
 
 export default function MotionPortfolio() {
@@ -199,12 +159,6 @@ export default function MotionPortfolio() {
     event.currentTarget.style.setProperty("--magnet-y", "0px");
   };
 
-  const moveProject = (event: PointerEvent<HTMLElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    event.currentTarget.style.setProperty("--preview-x", `${event.clientX - rect.left}px`);
-    event.currentTarget.style.setProperty("--preview-y", `${event.clientY - rect.top}px`);
-  };
-
   const openWhatsApp = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -268,7 +222,7 @@ export default function MotionPortfolio() {
               </h1>
               <p className="motion-hero-intro">
                 Mi occupo personalmente di design, versione mobile, pubblicazione e modifiche.
-                Progetti a partire da €300.
+                Il sito essenziale completo costa €300.
               </p>
               <div className="motion-hero-actions">
                 <a href={directWhatsAppUrl} target="_blank" rel="noreferrer">
@@ -294,61 +248,21 @@ export default function MotionPortfolio() {
           <div className="motion-work-heading" data-reveal>
             <p className="motion-label">PROGETTI REALI · 2026</p>
             <h2 id="motion-work-title">Tre problemi.<br />Tre soluzioni concrete.</h2>
-            <span>Apri ogni progetto</span>
+            <span>Tre identità distinte</span>
           </div>
           <div className="motion-work-list">
             {projects.map((project) => (
-              <a
+              <article
                 className="motion-work-row"
-                href={`#caso-${project.slug}`}
                 key={project.title}
-                onPointerMove={moveProject}
                 data-reveal
               >
                 <span>{project.number}</span>
-                <h3>{project.title}</h3>
-                <p>{project.type}</p>
-                <WorkCue />
-                <div className={`motion-work-preview ${project.className}`} aria-hidden="true">
-                  <small>{project.type}</small>
-                  <strong>{project.copy}</strong>
-                  <i /><b /><em />
-                </div>
-              </a>
-            ))}
-          </div>
-
-          <div className="motion-case-studies">
-            {projects.map((project) => (
-              <article className="motion-case" id={`caso-${project.slug}`} key={project.slug}>
-                <header data-reveal>
-                  <p className="motion-label">CASO {project.number} · {project.type}</p>
+                <div>
                   <h3>{project.title}</h3>
-                </header>
-                <div className="motion-case-layout">
-                  <figure className={`motion-case-screen ${project.screenClass}`} data-reveal>
-                    <div className="motion-browser-bar" aria-hidden="true"><i /><i /><i /><span>{project.slug}.it</span></div>
-                    <div className="motion-phone" aria-hidden="true">
-                      <small>{project.type}</small>
-                      <strong>{project.copy}</strong>
-                      <div><i /><b /><em /></div>
-                      <span>SCOPRI IL PROGETTO</span>
-                    </div>
-                    <figcaption>Anteprima mobile del progetto</figcaption>
-                  </figure>
-                  <div className="motion-case-copy" data-reveal>
-                    <dl>
-                      <div><dt>Situazione iniziale</dt><dd>{project.before}</dd></div>
-                      <div><dt>Cosa ho realizzato</dt><dd>{project.built}</dd></div>
-                      <div><dt>Decisione importante</dt><dd>{project.decision}</dd></div>
-                      <div><dt>Consegna</dt><dd>{project.delivery}</dd></div>
-                    </dl>
-                    <div className="motion-scope" aria-label="Ambito del progetto">
-                      {project.scope.map((item) => <span key={item}>{item}</span>)}
-                    </div>
-                    <a className="motion-case-link" href="#contatti">Vorrei un progetto così <Signal /></a>
-                  </div>
+                  <small>{project.type}</small>
                 </div>
+                <p>{project.copy}</p>
               </article>
             ))}
           </div>
@@ -356,24 +270,33 @@ export default function MotionPortfolio() {
 
         <section className="motion-offer" id="offerta" aria-labelledby="motion-offer-title">
           <div className="motion-offer-lead" data-reveal>
-            <p className="motion-label">L’OFFERTA</p>
-            <h2 id="motion-offer-title">Il necessario per andare online bene.</h2>
-            <div className="motion-price"><span>A partire da</span><strong>€300</strong></div>
+            <p className="motion-label">SITO ESSENZIALE</p>
+            <h2 id="motion-offer-title">€300. Un prezzo chiaro, per un sito completo.</h2>
+            <p className="motion-offer-intro">Non è un prezzo-esca: se il progetto resta nel perimetro qui indicato, il totale resta €300.</p>
+            <div className="motion-price"><span>Pacchetto essenziale</span><strong>€300</strong><small>Prezzo completo</small></div>
           </div>
           <div className="motion-offer-details" data-reveal>
-            <h3>Nel progetto base</h3>
+            <h3>Cosa comprende</h3>
             <ul>
-              <li><span>01</span>Struttura e direzione visiva del sito</li>
-              <li><span>02</span>Design desktop e versione mobile</li>
-              <li><span>03</span>Sviluppo, controlli e pubblicazione</li>
-              <li><span>04</span>Modifiche concordate prima del lancio</li>
-              <li><span>05</span>Consegna del sito e supporto iniziale</li>
+              <li><span>01</span>Una pagina su misura con le sezioni essenziali</li>
+              <li><span>02</span>Design personalizzato per desktop e mobile</li>
+              <li><span>03</span>Inserimento dei testi e delle immagini che mi fornisci</li>
+              <li><span>04</span>Contatti diretti, WhatsApp, telefono o mappa</li>
+              <li><span>05</span>Sviluppo, controlli e pubblicazione</li>
+              <li><span>06</span>Modifiche concordate prima del lancio</li>
             </ul>
             <div className="motion-exclusions">
-              <h3>Da quotare a parte</h3>
-              <p>Dominio e hosting, e-commerce o funzioni avanzate, shooting fotografico, copywriting completo e identità visiva.</p>
+              <h3>Il prezzo sale solo se aggiungiamo</h3>
+              <div className="motion-extra-grid">
+                <span>Più pagine o lingue</span>
+                <span>Booking o e-commerce</span>
+                <span>Logo e identità visiva</span>
+                <span>Testi o foto da produrre</span>
+                <span>Funzioni su misura</span>
+                <span>Gestione continuativa</span>
+              </div>
+              <p>Ogni extra viene definito e approvato prima di iniziare. Dominio e hosting sono costi esterni separati, sempre comunicati in anticipo.</p>
             </div>
-            <p className="motion-payment"><strong>Pagamento:</strong> 50% all’avvio, 50% alla pubblicazione.</p>
           </div>
         </section>
 
@@ -395,7 +318,7 @@ export default function MotionPortfolio() {
         <section className="motion-testimonials" id="testimonianze" aria-labelledby="motion-testimonials-title">
           <div className="motion-testimonials-heading" data-reveal>
             <p className="motion-label">TESTIMONIANZE</p>
-            <h2 id="motion-testimonials-title">Le parole giuste,<br />dopo l’approvazione.</h2>
+            <h2 id="motion-testimonials-title">Com’è lavorare<br />insieme.</h2>
             <p className="motion-draft-warning">Bozze provvisorie da inviare ai clienti: non sono ancora testimonianze approvate.</p>
           </div>
           <div className="motion-testimonial-grid">
