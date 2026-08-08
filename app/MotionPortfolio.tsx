@@ -55,17 +55,17 @@ const faq = [
   {
     question: "Posso usare il dominio che ho già?",
     answer:
-      "Sì. Posso collegare un dominio esistente oppure aiutarti a scegliere e registrare quello giusto. Il costo del dominio resta separato dal progetto.",
+      "Sì. Posso collegare un dominio esistente oppure aiutarti a scegliere e registrare quello giusto. Il dominio resta intestato a te e ne paghi direttamente il rinnovo annuale.",
   },
   {
     question: "Chi gestisce l’hosting?",
     answer:
-      "Ti consiglio una soluzione adatta al sito e mi occupo della configurazione tecnica. Gli eventuali costi del servizio di hosting non sono inclusi nel pacchetto da €300.",
+      "L’hosting è incluso e lo gestisco io. Non hai costi di hosting e non devi occuparti della configurazione o della gestione tecnica del servizio.",
   },
   {
     question: "Posso chiedere modifiche?",
     answer:
-      "Sì. Le revisioni concordate vengono definite nel preventivo; prima della pubblicazione controlliamo insieme testi, immagini e versione mobile.",
+      "Sì. Correzioni a testi, immagini e piccoli dettagli fanno parte del lavoro. Nuove pagine o sezioni, un restyling completo o nuove funzioni vengono invece quotati a parte.",
   },
   {
     question: "Il sito sarà mio?",
@@ -75,7 +75,7 @@ const faq = [
   {
     question: "Chi prepara testi e immagini?",
     answer:
-      "Partiamo dai materiali che hai già. Ti aiuto a organizzarli e a capire cosa manca; copywriting, shooting o identità visiva completa vengono quotati separatamente quando servono.",
+      "Possiamo partire dai materiali che hai già oppure scrivere e organizzare da zero i testi necessari. Inserisco anche immagini e il tuo logo esistente; shooting fotografico e creazione del logo vengono quotati separatamente.",
   },
   {
     question: "Come funziona il pagamento?",
@@ -269,35 +269,37 @@ export default function MotionPortfolio() {
         </section>
 
         <section className="motion-offer" id="offerta" aria-labelledby="motion-offer-title">
-          <div className="motion-offer-lead" data-reveal>
-            <p className="motion-label">SITO ESSENZIALE</p>
-            <h2 id="motion-offer-title">€300. Un prezzo chiaro, per un sito completo.</h2>
-            <p className="motion-offer-intro">Non è un prezzo-esca: se il progetto resta nel perimetro qui indicato, il totale resta €300.</p>
-            <div className="motion-price"><span>Pacchetto essenziale</span><strong>€300</strong><small>Prezzo completo</small></div>
-          </div>
-          <div className="motion-offer-details" data-reveal>
-            <h3>Cosa comprende</h3>
-            <ul>
-              <li><span>01</span>Una pagina su misura con le sezioni essenziali</li>
-              <li><span>02</span>Design personalizzato per desktop e mobile</li>
-              <li><span>03</span>Inserimento dei testi e delle immagini che mi fornisci</li>
-              <li><span>04</span>Contatti diretti, WhatsApp, telefono o mappa</li>
-              <li><span>05</span>Sviluppo, controlli e pubblicazione</li>
-              <li><span>06</span>Modifiche concordate prima del lancio</li>
-            </ul>
-            <div className="motion-exclusions">
-              <h3>Il prezzo sale solo se aggiungiamo</h3>
-              <div className="motion-extra-grid">
-                <span>Più pagine o lingue</span>
-                <span>Booking o e-commerce</span>
-                <span>Logo e identità visiva</span>
-                <span>Testi o foto da produrre</span>
-                <span>Funzioni su misura</span>
-                <span>Gestione continuativa</span>
+          <div className="motion-offer-main" data-reveal>
+            <p className="motion-label">UN SITO STATICO, FATTO BENE</p>
+            <h2 id="motion-offer-title">Semplice nella struttura.<br /><em>Completo in tutto il resto.</em></h2>
+            <div className="motion-offer-promise">
+              <strong>€300</strong>
+              <div>
+                <p>Realizzo il sito statico concordato, in una lingua, con tutto ciò che normalmente serve per presentare bene la tua attività.</p>
+                <small>Definiamo insieme pagine, sezioni e funzioni prima di iniziare. Finché il progetto resta in quel perimetro, il prezzo resta €300.</small>
               </div>
-              <p>Ogni extra viene definito e approvato prima di iniziare. Dominio e hosting sono costi esterni separati, sempre comunicati in anticipo.</p>
             </div>
           </div>
+          <aside className="motion-offer-scope" data-reveal>
+            <div>
+              <h3>Cosa significa “sito completo”</h3>
+              <ul>
+                <li><strong>Design su ogni dispositivo</strong><span>Il sito si adatta a desktop, tablet e smartphone.</span></li>
+                <li><strong>Testi e contenuti</strong><span>Scrivo o adatto i testi e organizzo immagini, materiali e il tuo logo esistente.</span></li>
+                <li><strong>Funzioni essenziali</strong><span>Form di contatto, pulsanti, link e Google Maps incorporata, quando servono.</span></li>
+                <li><strong>Sviluppo e pubblicazione</strong><span>Costruisco, controllo e porto online il sito concordato.</span></li>
+              </ul>
+              <div className="motion-offer-revisions">
+                <strong>Le piccole modifiche sono comprese.</strong>
+                <p>Correggere un testo, cambiare un’immagine o rifinire un dettaglio fa parte del lavoro: non diventa automaticamente un costo extra.</p>
+              </div>
+            </div>
+            <div className="motion-offer-extras">
+              <strong>Si quota a parte quando cambia il progetto.</strong>
+              <p>Nuove pagine o sezioni richieste dopo l’accordo, restyling completo, e-commerce, sito multilingua, sistema di prenotazione, creazione del logo o funzioni personalizzate.</p>
+              <small>Il dominio viene registrato e pagato da te una volta all’anno. L’hosting è incluso e lo gestisco io: non devi pagarlo né occupartene.</small>
+            </div>
+          </aside>
         </section>
 
         <section className="motion-method" id="processo" aria-labelledby="motion-method-title">
