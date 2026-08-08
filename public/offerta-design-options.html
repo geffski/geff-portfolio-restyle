@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proposte sezione offerta · Geff</title>
+    <meta
+      name="description"
+      content="Quattro proposte di design per presentare il sito essenziale da 300 euro."
+    />
+    <style>
+      :root {
+        --blue: #2558ff;
+        --ink: #101011;
+        --paper: #f5f4ef;
+        --white: #fff;
+        --line: rgba(16, 16, 17, 0.22);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--ink);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      button, input, textarea, select { font: inherit; }
+
+      .topbar {
+        position: sticky;
+        z-index: 20;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        min-height: 70px;
+        padding: 14px 4vw;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(16, 16, 17, 0.92);
+        color: white;
+        backdrop-filter: blur(16px);
+      }
+      .brand { display: flex; align-items: baseline; gap: 14px; }
+      .brand strong { font-size: 24px; letter-spacing: -0.06em; }
+      .brand span,
+      .topbar p,
+      .topbar nav { font-size: 10px; letter-spacing: 0.13em; text-transform: uppercase; }
+      .brand span,
+      .topbar p { color: rgba(255, 255, 255, 0.52); }
+      .topbar p { margin: 0; }
+      .topbar nav { display: flex; gap: 8px; }
+      .topbar nav a {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transition: 0.25s ease;
+      }
+      .topbar nav a:hover { border-color: var(--blue); background: var(--blue); }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 0.65fr 1.35fr;
+        gap: 8vw;
+        align-items: end;
+        min-height: 52vh;
+        padding: 90px 7vw 100px;
+        background: var(--paper);
+      }
+      .eyebrow { margin: 0; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+      .intro h1 {
+        max-width: 980px;
+        margin: 0;
+        font-size: clamp(58px, 8vw, 128px);
+        font-weight: 480;
+        letter-spacing: -0.075em;
+        line-height: 0.88;
+      }
+      .intro h1 em { color: var(--blue); font-family: Georgia, serif; font-weight: 400; }
+      .intro-note { max-width: 430px; margin: 32px 0 0; color: #555; font-size: 16px; line-height: 1.55; }
+
+      .option { min-height: 100vh; scroll-margin-top: 70px; }
+      .option-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px 4vw;
+        border-bottom: 1px solid currentColor;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .option-label span:last-child { opacity: 0.55; }
+      .kicker { margin: 0; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+      /* A — statement */
+      .option-a { background: var(--blue); color: white; }
+      .statement {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 9vw;
+        min-height: calc(100vh - 51px);
+        padding: 9vw 7vw;
+      }
+      .statement-copy { display: flex; flex-direction: column; justify-content: space-between; }
+      .statement h2 {
+        max-width: 700px;
+        margin: 34px 0 40px;
+        font-size: clamp(66px, 8.5vw, 136px);
+        font-weight: 500;
+        letter-spacing: -0.08em;
+        line-height: 0.82;
+      }
+      .statement h2 span { display: block; font-size: 0.42em; letter-spacing: -0.045em; line-height: 0.95; }
+      .statement-lead { max-width: 470px; margin: 0; color: rgba(255, 255, 255, 0.78); font-size: 18px; line-height: 1.55; }
+      .statement-scope { align-self: end; }
+      .statement-scope h3,
+      .extras h3 { margin: 0 0 22px; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
+      .statement-scope ol { margin: 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, 0.46); list-style: none; }
+      .statement-scope li {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 18px;
+        padding: 19px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.46);
+        font-size: 18px;
+        line-height: 1.35;
+      }
+      .statement-scope li span { color: rgba(255, 255, 255, 0.55); font-size: 9px; }
+      .extras { margin-top: 38px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.46); }
+      .extras p { margin: 0; color: rgba(255, 255, 255, 0.75); font-size: 14px; line-height: 1.55; }
+
+      /* B — editorial */
+      .option-b { background: var(--paper); }
+      .editorial {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(350px, 0.85fr);
+        min-height: calc(100vh - 51px);
+      }
+      .editorial-main { padding: 8vw 7vw; border-right: 1px solid var(--line); }
+      .editorial h2 {
+        max-width: 820px;
+        margin: 54px 0 80px;
+        font-size: clamp(62px, 7.5vw, 118px);
+        font-weight: 480;
+        letter-spacing: -0.075em;
+        line-height: 0.88;
+      }
+      .editorial h2 em { color: var(--blue); font-family: Georgia, serif; font-weight: 400; }
+      .promise {
+        display: grid;
+        grid-template-columns: 0.65fr 1.35fr;
+        gap: 5vw;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+      .promise strong { font-size: clamp(72px, 8vw, 126px); letter-spacing: -0.08em; line-height: 0.8; }
+      .promise div { max-width: 460px; }
+      .promise p { margin: 0 0 18px; font-size: 18px; line-height: 1.55; }
+      .promise small { color: #686866; font-size: 13px; line-height: 1.5; }
+      .editorial-list { display: flex; flex-direction: column; justify-content: space-between; padding: 8vw 4vw 4vw; background: #e7e5df; }
+      .editorial-list ul { margin: 46px 0 0; padding: 0; list-style: none; counter-reset: scope; }
+      .editorial-list li {
+        counter-increment: scope;
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        padding: 17px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 16px;
+        line-height: 1.4;
+      }
+      .editorial-list li::before { content: "0" counter(scope); color: var(--blue); font-size: 9px; }
+      .outside { margin-top: 60px; padding-top: 22px; border-top: 3px solid var(--blue); }
+      .outside strong { display: block; margin-bottom: 12px; font-size: 14px; }
+      .outside p { margin: 0; color: #5d5d5a; font-size: 13px; line-height: 1.55; }
+
+      /* C — proposal */
+      .option-c { background: #111; color: white; }
+      .proposal { min-height: calc(100vh - 51px); padding: 7vw; }
+      .proposal-head {
+        display: grid;
+        grid-template-columns: 1fr 1.25fr;
+        gap: 7vw;
+        align-items: end;
+        padding-bottom: 55px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      }
+      .proposal h2 {
+        margin: 0;
+        font-size: clamp(60px, 7vw, 108px);
+        font-weight: 480;
+        letter-spacing: -0.07em;
+        line-height: 0.9;
+      }
+      .proposal-head div > p { max-width: 560px; margin: 0 0 30px; color: #aaa; font-size: 18px; line-height: 1.5; }
+      .price-lockup { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+      .price-lockup strong { font-size: clamp(86px, 10vw, 158px); letter-spacing: -0.09em; line-height: 0.72; }
+      .price-lockup span { padding: 10px 13px; border: 1px solid var(--blue); color: #9fb2ff; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; }
+      .proposal-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 60px; border-top: 1px solid rgba(255, 255, 255, 0.25); border-left: 1px solid rgba(255, 255, 255, 0.25); }
+      .proposal-card { min-height: 260px; padding: 26px; border-right: 1px solid rgba(255, 255, 255, 0.25); border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+      .proposal-card > span { color: var(--blue); font-size: 10px; }
+      .proposal-card h3 { margin: 60px 0 16px; font-size: 25px; font-weight: 500; letter-spacing: -0.04em; }
+      .proposal-card p { margin: 0; color: #989898; font-size: 14px; line-height: 1.55; }
+      .proposal-foot { display: flex; justify-content: space-between; gap: 30px; margin-top: 30px; color: #9b9b9b; font-size: 12px; line-height: 1.5; }
+      .proposal-foot strong { color: white; font-weight: 500; }
+
+      /* D — compact conversion */
+      .option-d { background: #e9e9e5; }
+      .compact { min-height: calc(100vh - 51px); padding: 7vw; }
+      .compact-shell {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        max-width: 1380px;
+        min-height: 660px;
+        margin: 0 auto;
+        border: 1px solid var(--ink);
+        background: var(--white);
+        box-shadow: 24px 24px 0 var(--blue);
+      }
+      .compact-price { display: flex; flex-direction: column; justify-content: space-between; padding: 54px; background: var(--ink); color: white; }
+      .compact-price h2 { margin: 24px 0; font-size: clamp(56px, 6vw, 94px); font-weight: 480; letter-spacing: -0.07em; line-height: 0.9; }
+      .compact-price strong { display: block; color: #fff; font-size: clamp(95px, 11vw, 176px); letter-spacing: -0.09em; line-height: 0.78; }
+      .compact-price p { max-width: 420px; margin: 25px 0 0; color: #aaa; font-size: 16px; line-height: 1.55; }
+      .compact-content { display: grid; grid-template-rows: 1fr auto; }
+      .yes-no { display: grid; grid-template-columns: 1fr 1fr; }
+      .yes-no > div { padding: 52px 36px; }
+      .yes-no > div + div { border-left: 1px solid var(--line); }
+      .yes-no h3 { margin: 0 0 28px; font-size: 18px; letter-spacing: -0.02em; }
+      .yes-no h3 span { display: inline-grid; width: 25px; height: 25px; margin-right: 9px; place-items: center; border-radius: 50%; background: var(--blue); color: white; font-size: 11px; }
+      .yes-no div:last-child h3 span { background: transparent; border: 1px solid var(--ink); color: var(--ink); }
+      .yes-no ul { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+      .yes-no li { padding-bottom: 16px; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.4; }
+      .compact-bottom { padding: 25px 36px; border-top: 1px solid var(--ink); background: var(--blue); color: white; }
+      .compact-bottom p { margin: 0; font-size: 14px; line-height: 1.55; }
+      .compact-bottom strong { font-weight: 600; }
+
+      .page-end {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 34px 4vw;
+        background: var(--ink);
+        color: white;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .page-end a { color: #8fa8ff; }
+
+      @media (max-width: 900px) {
+        .topbar p { display: none; }
+        .intro,
+        .statement,
+        .editorial,
+        .proposal-head,
+        .compact-shell { grid-template-columns: 1fr; }
+        .intro { gap: 45px; padding: 80px 22px; }
+        .intro h1 { font-size: 64px; }
+        .option-label { padding: 18px 22px; }
+        .option-label span:last-child { text-align: right; }
+        .statement { gap: 80px; padding: 90px 22px; }
+        .statement h2 { font-size: 78px; }
+        .statement-copy { gap: 45px; }
+        .editorial-main { padding: 90px 22px; border-right: 0; border-bottom: 1px solid var(--line); }
+        .editorial h2 { margin: 48px 0 65px; font-size: 68px; }
+        .promise { grid-template-columns: 1fr; }
+        .promise strong { font-size: 100px; }
+        .editorial-list { padding: 80px 22px; }
+        .proposal { padding: 90px 22px; }
+        .proposal-head { gap: 60px; }
+        .proposal h2 { font-size: 68px; }
+        .proposal-grid { grid-template-columns: 1fr; }
+        .proposal-card { min-height: 220px; }
+        .proposal-card h3 { margin-top: 45px; }
+        .proposal-foot { flex-direction: column; }
+        .compact { padding: 90px 22px 110px; }
+        .compact-shell { box-shadow: 10px 10px 0 var(--blue); }
+        .compact-price { padding: 50px 28px; }
+        .compact-price h2 { font-size: 66px; }
+        .compact-price strong { font-size: 120px; }
+      }
+
+      @media (max-width: 560px) {
+        .brand span { display: none; }
+        .topbar { padding-inline: 18px; }
+        .intro h1 { font-size: 53px; }
+        .statement h2 { font-size: 64px; }
+        .statement-scope li { font-size: 16px; }
+        .editorial h2,
+        .proposal h2,
+        .compact-price h2 { font-size: 56px; }
+        .proposal-grid,
+        .yes-no { grid-template-columns: 1fr; }
+        .yes-no > div + div { border-top: 1px solid var(--line); border-left: 0; }
+        .yes-no > div { padding: 42px 28px; }
+        .compact-price strong { font-size: 105px; }
+        .compact-bottom { padding: 25px 28px; }
+        .page-end { align-items: flex-start; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><strong>Geff</strong><span>Web designer</span></div>
+      <p>Confronto sezione “Sito essenziale”</p>
+      <nav aria-label="Vai a una proposta">
+        <a href="#a" aria-label="Proposta A">A</a>
+        <a href="#b" aria-label="Proposta B">B</a>
+        <a href="#c" aria-label="Proposta C">C</a>
+        <a href="#d" aria-label="Proposta D">D</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Pagina di confronto · 4 direzioni</p>
+          <p class="intro-note">Ogni proposta comunica la stessa cosa: €300 è il prezzo completo quando il progetto resta nel perimetro indicato.</p>
+        </div>
+        <h1>Come presentiamo<br /><em>l’offerta?</em></h1>
+      </section>
+
+      <section class="option option-a" id="a">
+        <div class="option-label"><span>Opzione A · Dichiarazione diretta</span><span>Impatto alto</span></div>
+        <div class="statement">
+          <div class="statement-copy">
+            <div>
+              <p class="kicker">Sito essenziale</p>
+              <h2>€300<span>Se ti serve questo, il prezzo è questo.</span></h2>
+            </div>
+            <p class="statement-lead">Una pagina su misura, completa e pronta per andare online. Nessun prezzo-esca: se il progetto resta in questo perimetro, il totale resta €300.</p>
+          </div>
+          <div class="statement-scope">
+            <h3>Dentro i €300</h3>
+            <ol>
+              <li><span>01</span>Una pagina con le sezioni essenziali</li>
+              <li><span>02</span>Design personalizzato, desktop e mobile</li>
+              <li><span>03</span>Inserimento dei materiali che mi fornisci</li>
+              <li><span>04</span>Contatti diretti, WhatsApp, telefono o mappa</li>
+              <li><span>05</span>Sviluppo, controlli e pubblicazione</li>
+              <li><span>06</span>Modifiche concordate prima del lancio</li>
+            </ol>
+            <div class="extras">
+              <h3>Quando cambia il prezzo</h3>
+              <p>Solo se aggiungiamo più pagine, più lingue, booking, e-commerce, identità visiva, produzione di testi o foto, oppure funzioni su misura.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="option option-b" id="b">
+        <div class="option-label"><span>Opzione B · Editoriale</span><span>Più elegante</span></div>
+        <div class="editorial">
+          <div class="editorial-main">
+            <p class="kicker">Un sito essenziale, non un sito generico</p>
+            <h2>Tutto quello che serve.<br /><em>Niente sorprese.</em></h2>
+            <div class="promise">
+              <strong>€300</strong>
+              <div>
+                <p>È il prezzo completo del pacchetto, non il punto da cui iniziare a sommare costi.</p>
+                <small>Prima di iniziare definiamo insieme il perimetro. Se resta quello descritto qui, il prezzo non cambia.</small>
+              </div>
+            </div>
+          </div>
+          <aside class="editorial-list">
+            <div>
+              <p class="kicker">Il pacchetto comprende</p>
+              <ul>
+                <li>Struttura di una pagina su misura</li>
+                <li>Design desktop e mobile</li>
+                <li>Inserimento di testi e immagini forniti</li>
+                <li>Contatti diretti e mappa</li>
+                <li>Sviluppo e pubblicazione</li>
+                <li>Revisioni concordate</li>
+              </ul>
+            </div>
+            <div class="outside">
+              <strong>Si quota a parte solo ciò che esce dal pacchetto.</strong>
+              <p>Più pagine o lingue, e-commerce, booking, logo, testi o fotografie da produrre e funzioni personalizzate.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="option option-c" id="c">
+        <div class="option-label"><span>Opzione C · Preventivo visivo</span><span>Più strutturata</span></div>
+        <div class="proposal">
+          <div class="proposal-head">
+            <div>
+              <p class="kicker">Pacchetto 01 · Sito essenziale</p>
+              <h2>Una base completa per andare online bene.</h2>
+            </div>
+            <div>
+              <p>Il progetto ha un perimetro chiaro, così sai subito cosa ricevi e quanto spendi.</p>
+              <div class="price-lockup"><strong>€300</strong><span>Totale pacchetto</span></div>
+            </div>
+          </div>
+          <div class="proposal-grid">
+            <article class="proposal-card"><span>01</span><h3>Direzione</h3><p>Struttura della pagina e design su misura per la tua attività.</p></article>
+            <article class="proposal-card"><span>02</span><h3>Contenuti</h3><p>Inserimento dei testi, delle immagini e dei contatti che mi fornisci.</p></article>
+            <article class="proposal-card"><span>03</span><h3>Responsive</h3><p>Versione desktop e mobile progettate come un unico sistema.</p></article>
+            <article class="proposal-card"><span>04</span><h3>Sviluppo</h3><p>Costruzione del sito, controlli tecnici e ottimizzazione finale.</p></article>
+            <article class="proposal-card"><span>05</span><h3>Revisioni</h3><p>Modifiche concordate insieme prima della pubblicazione.</p></article>
+            <article class="proposal-card"><span>06</span><h3>Online</h3><p>Pubblicazione e collegamento ai servizi concordati.</p></article>
+          </div>
+          <div class="proposal-foot">
+            <span><strong>Prezzo fisso nel perimetro.</strong> Ogni eventuale extra viene definito prima di iniziare.</span>
+            <span>Esclusi: dominio, hosting e richieste fuori dal pacchetto.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="option option-d" id="d">
+        <div class="option-label"><span>Opzione D · Confronto immediato</span><span>Più compatta</span></div>
+        <div class="compact">
+          <div class="compact-shell">
+            <div class="compact-price">
+              <div>
+                <p class="kicker">Sito essenziale</p>
+                <h2>Il tuo sito completo.</h2>
+              </div>
+              <div>
+                <strong>€300</strong>
+                <p>Prezzo completo quando il progetto resta nel perimetro qui accanto.</p>
+              </div>
+            </div>
+            <div class="compact-content">
+              <div class="yes-no">
+                <div>
+                  <h3><span>✓</span>È compreso</h3>
+                  <ul>
+                    <li>Una pagina su misura</li>
+                    <li>Design desktop e mobile</li>
+                    <li>Testi e immagini forniti da te</li>
+                    <li>Contatti, WhatsApp o mappa</li>
+                    <li>Sviluppo e pubblicazione</li>
+                    <li>Revisioni concordate</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3><span>+</span>Si quota a parte</h3>
+                  <ul>
+                    <li>Più pagine o lingue</li>
+                    <li>Booking o e-commerce</li>
+                    <li>Logo e identità visiva</li>
+                    <li>Testi o foto da produrre</li>
+                    <li>Funzioni su misura</li>
+                    <li>Gestione continuativa</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="compact-bottom"><p><strong>Niente sorprese:</strong> ogni extra viene definito e approvato prima di iniziare.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-end">
+      <span>Fine confronto · A / B / C / D</span>
+      <a href="#">Torna all’inizio ↑</a>
+    </footer>
+  </body>
+</html>
