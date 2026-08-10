@@ -24,9 +24,10 @@ const dmSerif = DM_Serif_Display({
   weight: "400",
 });
 
-const title = "Siti web professionali per piccole attività | Geff";
+const title = "Geff - Web Designer";
 const description =
   "Design, contenuti, pubblicazione e modifiche per piccole attività. Siti web completi a €300, seguiti personalmente da Geff a Modena.";
+const canonicalUrl = "https://geff-palette-lab.geff.workers.dev/";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -36,19 +37,23 @@ export async function generateMetadata(): Promise<Metadata> {
   const forwardedProtocol = requestHeaders.get("x-forwarded-proto")?.split(",")[0].trim();
   const protocol = forwardedProtocol ?? (host.startsWith("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
-  const socialImage = `${origin}/og.png`;
+  const socialImage = `${origin}/og.png?v=2`;
 
   return {
+    metadataBase: new URL(canonicalUrl),
     title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     icons: {
-      icon: "/favicon.svg",
-      shortcut: "/favicon.svg",
+      icon: "/favicon.svg?v=2",
+      shortcut: "/favicon.svg?v=2",
     },
     openGraph: {
       type: "website",
       locale: "it_IT",
-      url: origin,
+      url: canonicalUrl,
       siteName: "Geff — Web Designer",
       title,
       description,
@@ -56,7 +61,7 @@ export async function generateMetadata(): Promise<Metadata> {
         url: socialImage,
         width: 1536,
         height: 1024,
-        alt: "Geff — Fatti trovare. Fatti capire. Fatti scegliere.",
+        alt: "Geff — Fatti capire. Fatti trovare. Fatti scegliere.",
       }],
     },
     twitter: {
