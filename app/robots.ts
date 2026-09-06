@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://geff-palette-lab.geff.workers.dev";
+const siteUrl = "https://geff-portfolio-showcases-20260809.geff.workers.dev";
 
 export default function robots(): MetadataRoute.Robots {
   return {

@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geff. — Idee per l’anteprima del link</title>
+    <style>
+      :root {
+        --blue: #0757ff;
+        --blue-dark: #0039bc;
+        --paper: #f2f0e9;
+        --ink: #111211;
+        --muted: #696a65;
+        --red: #ff382b;
+        --green: #0f4e39;
+        --green-soft: #c8ddd4;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        text-rendering: optimizeLegibility;
+      }
+
+      main {
+        width: min(1480px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 64px 0 96px;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(280px, .65fr);
+        gap: 64px;
+        align-items: end;
+        margin-bottom: 56px;
+      }
+
+      .eyebrow,
+      .concept-label,
+      .recommendation-label,
+      .note-label {
+        margin: 0 0 14px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 900px;
+        margin: 0;
+        font-size: clamp(46px, 7vw, 108px);
+        font-weight: 700;
+        line-height: .9;
+        letter-spacing: -.07em;
+      }
+
+      .intro-copy {
+        margin: 0;
+        color: #474843;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .intro-copy strong { color: var(--ink); }
+
+      .concepts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .concept {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid rgba(17, 18, 17, .14);
+        border-radius: 22px;
+        background: #fff;
+        box-shadow: 0 18px 45px rgba(18, 22, 20, .08);
+      }
+
+      .concept.is-recommended {
+        border: 3px solid var(--red);
+        box-shadow: 0 20px 50px rgba(255, 56, 43, .12);
+      }
+
+      .concept-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 20px 22px 18px;
+      }
+
+      .concept-label { margin: 0; }
+
+      .concept-number {
+        color: #8a8b86;
+        font-size: 12px;
+        letter-spacing: .08em;
+      }
+
+      .social-image {
+        position: relative;
+        isolation: isolate;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 68% 45%, rgba(0, 61, 255, .96), transparent 40%),
+          linear-gradient(135deg, #006aff 0%, var(--blue) 54%, #0044e8 100%);
+      }
+
+      .social-image::after {
+        content: "WEB";
+        position: absolute;
+        z-index: -1;
+        left: -3%;
+        bottom: -15%;
+        color: rgba(0, 27, 129, .48);
+        font-size: clamp(100px, 14vw, 220px);
+        font-weight: 800;
+        line-height: .8;
+        letter-spacing: -.09em;
+      }
+
+      .signature {
+        position: absolute;
+        top: 6.5%;
+        left: 6.5%;
+        color: #fff;
+        font-size: clamp(18px, 2.2vw, 34px);
+        font-weight: 800;
+        letter-spacing: -.06em;
+      }
+
+      .signature span { color: #090909; }
+
+      .signature-lockup {
+        display: inline-block;
+        line-height: .82;
+      }
+
+      .signature-lockup b {
+        position: relative;
+        display: inline-block;
+        font: inherit;
+        letter-spacing: inherit;
+      }
+
+      .signature-lockup i {
+        position: absolute;
+        top: -.04em;
+        right: calc(-.13em - 5px);
+        width: .13em;
+        height: .13em;
+        border-radius: 25%;
+        background: #090909;
+      }
+
+      .signature-lockup small {
+        display: block;
+        margin-top: .5em;
+        font-size: .22em;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: .25em;
+        text-transform: uppercase;
+      }
+
+      .social-headline {
+        position: absolute;
+        top: 24%;
+        left: 6.5%;
+        right: 4%;
+        margin: 0;
+        color: #fff;
+        font-size: clamp(31px, 4vw, 62px);
+        font-weight: 800;
+        line-height: .84;
+        letter-spacing: -.072em;
+      }
+
+      .social-headline span { display: block; }
+
+      .social-headline em {
+        color: #070707;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.06em;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: -.075em;
+      }
+
+      .is-recommended .social-headline span:last-child {
+        font-size: .9em;
+      }
+
+      .price-badge {
+        position: absolute;
+        right: 4.5%;
+        bottom: 5.5%;
+        display: grid;
+        place-items: center;
+        width: 29%;
+        aspect-ratio: 1;
+        padding: 7% 3% 5%;
+        border-radius: 50%;
+        background: #050505;
+        color: #fff;
+        text-align: center;
+        transform: rotate(-2deg);
+      }
+
+      .price-badge strong {
+        display: block;
+        font-size: clamp(24px, 3.1vw, 50px);
+        line-height: .8;
+        letter-spacing: -.07em;
+      }
+
+      .price-badge span {
+        display: block;
+        margin-top: 10%;
+        font-size: clamp(7px, .85vw, 13px);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+
+      .price-badge small {
+        display: block;
+        margin-top: 7%;
+        color: #b9b9b9;
+        font-size: clamp(5px, .56vw, 9px);
+        line-height: 1.1;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+      }
+
+      .is-recommended .price-badge {
+        right: 2.5%;
+        bottom: 3%;
+        width: 27%;
+        min-height: 0;
+        aspect-ratio: 1 / 1;
+        padding: 0;
+        overflow: hidden;
+        border: clamp(4px, .5vw, 7px) solid var(--red);
+        border-radius: 50%;
+        clip-path: none;
+      }
+
+      .is-recommended .price-badge > div {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 14% 11% 11%;
+      }
+
+      .is-recommended .price-badge strong {
+        font-size: clamp(23px, 2.5vw, 40px);
+        line-height: .86;
+      }
+
+      .is-recommended .price-badge span {
+        margin-top: 9%;
+        font-size: clamp(7px, .72vw, 11px);
+        letter-spacing: .06em;
+      }
+
+      .is-recommended .price-badge small {
+        margin-top: 6%;
+        font-size: clamp(5px, .45vw, 7px);
+        letter-spacing: .06em;
+      }
+
+      .concept-b .price-badge {
+        right: 5.5%;
+        bottom: 6.5%;
+        width: 31%;
+        box-shadow: 0 0 0 7px var(--red);
+        transform: rotate(3deg);
+      }
+
+      .concept-b .price-badge small { display: none; }
+
+      .concept-b .social-headline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -13%;
+        width: 54%;
+        height: 5px;
+        border-radius: 999px;
+        background: var(--red);
+        transform: rotate(-1.5deg);
+      }
+
+      .concept-c .social-image {
+        background:
+          linear-gradient(108deg, transparent 48%, rgba(0, 36, 150, .42) 48.4% 68%, transparent 68.4%),
+          var(--blue);
+      }
+
+      .concept-c .social-headline {
+        top: 27%;
+        right: 20%;
+        font-size: clamp(34px, 4.4vw, 68px);
+      }
+
+      .concept-c .price-badge {
+        right: 4.5%;
+        bottom: 5.5%;
+        width: 31%;
+        color: #090909;
+        background: #fff;
+        box-shadow: 10px 10px 0 #090909;
+        transform: none;
+      }
+
+      .concept-c .price-badge small { color: #464646; }
+
+      .preview-meta {
+        min-height: 195px;
+        padding: 22px 22px 24px;
+        background: var(--green);
+        color: #fff;
+      }
+
+      .preview-title {
+        margin: 0 0 8px;
+        color: var(--green-soft);
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .preview-description {
+        margin: 0;
+        color: rgba(200, 221, 212, .7);
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.35;
+      }
+
+      .preview-domain {
+        display: block;
+        margin-top: 17px;
+        color: rgba(255, 255, 255, .68);
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .concept-notes {
+        padding: 22px;
+      }
+
+      .recommendation-label { color: var(--red); }
+
+      .concept-notes h2 {
+        margin: 0 0 10px;
+        font-size: 23px;
+        letter-spacing: -.04em;
+      }
+
+      .concept-notes p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .language-note {
+        display: grid;
+        grid-template-columns: .8fr 1.2fr;
+        gap: 60px;
+        margin-top: 48px;
+        padding: 38px;
+        border-radius: 22px;
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .language-note h2 {
+        margin: 0;
+        font-size: clamp(32px, 4vw, 58px);
+        line-height: .95;
+        letter-spacing: -.055em;
+      }
+
+      .wording-options {
+        display: grid;
+        gap: 18px;
+      }
+
+      .wording-option {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 28px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+      }
+
+      .wording-option:last-child {
+        padding-bottom: 0;
+        border: 0;
+      }
+
+      .wording-option strong { font-size: 20px; }
+
+      .wording-option span {
+        color: rgba(255, 255, 255, .65);
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      @media (max-width: 1100px) {
+        .concepts { grid-template-columns: 1fr; }
+        .concept { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); }
+        .concept-head { grid-column: 1 / -1; }
+        .social-image { align-self: stretch; }
+        .concept-side { display: flex; flex-direction: column; }
+        .preview-meta { min-height: 0; flex: 1; }
+        .social-image::after { font-size: clamp(150px, 25vw, 280px); }
+        .social-headline { font-size: clamp(42px, 6vw, 74px); }
+        .concept-c .social-headline { font-size: clamp(46px, 6.4vw, 80px); }
+        .signature { font-size: clamp(22px, 3.2vw, 40px); }
+        .price-badge strong { font-size: clamp(31px, 4.5vw, 56px); }
+        .price-badge span { font-size: clamp(9px, 1.2vw, 15px); }
+        .price-badge small { font-size: clamp(6px, .8vw, 10px); }
+      }
+
+      @media (max-width: 760px) {
+        main { width: min(100% - 24px, 560px); padding: 32px 0 56px; }
+        .intro { grid-template-columns: 1fr; gap: 24px; margin-bottom: 36px; }
+        .concept { display: block; border-radius: 16px; }
+        .concepts { gap: 28px; }
+        .concept-head { padding: 17px 18px 15px; }
+        .social-image::after { font-size: 34vw; }
+        .signature { font-size: 4.7vw; }
+        .social-headline { font-size: 8.5vw; }
+        .concept-c .social-headline { font-size: 9vw; }
+        .price-badge strong { font-size: 6.6vw; }
+        .price-badge span { font-size: 1.9vw; }
+        .price-badge small { font-size: 1.25vw; }
+        .preview-meta { min-height: 0; padding: 19px 18px 21px; }
+        .preview-title { font-size: 18px; }
+        .preview-description { font-size: 16px; }
+        .concept-notes { padding: 20px 18px 23px; }
+        .language-note { grid-template-columns: 1fr; gap: 30px; padding: 28px 22px; }
+        .wording-option { grid-template-columns: 1fr; gap: 7px; }
+      }
+
+      body.render-og {
+        width: 1536px;
+        height: 1024px;
+        overflow: hidden;
+        background: var(--blue);
+        cursor: none;
+      }
+
+      .render-og main {
+        width: 1536px;
+        height: 1024px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .render-og .intro,
+      .render-og .concept:not(.is-recommended),
+      .render-og .concept-head,
+      .render-og .concept-side,
+      .render-og .language-note {
+        display: none;
+      }
+
+      .render-og .concepts,
+      .render-og .concept.is-recommended {
+        display: block;
+        width: 1536px;
+        height: 1024px;
+        margin: 0;
+      }
+
+      .render-og .concept.is-recommended {
+        overflow: hidden;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .render-og .social-image {
+        width: 1536px;
+        height: 1024px;
+        aspect-ratio: auto;
+      }
+
+      .render-og .social-image::after {
+        left: -3%;
+        bottom: -14%;
+        font-size: 580px;
+      }
+
+      .render-og .signature {
+        top: 5.2%;
+        left: 4%;
+        font-size: 72px;
+      }
+
+      .render-og .social-headline {
+        top: 18%;
+        left: 4%;
+        right: 3%;
+        font-size: 176px;
+        line-height: .84;
+      }
+
+      .render-og .is-recommended .price-badge {
+        right: 2.5%;
+        bottom: 3%;
+        width: 27%;
+        border-width: 10px;
+      }
+
+      .render-og .is-recommended .price-badge strong {
+        font-size: 126px;
+      }
+
+      .render-og .is-recommended .price-badge span {
+        font-size: 31px;
+      }
+
+      .render-og .is-recommended .price-badge small {
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="intro">
+        <div>
+          <p class="eyebrow">Anteprima link · 3 direzioni</p>
+          <h1>Prima del clic, deve già vendere.</h1>
+        </div>
+        <p class="intro-copy">
+          Il prezzo deve capirsi in mezzo secondo. La soluzione più forte è
+          <strong>“€300 · una volta”</strong>, dentro un cerchio nero pulito: abbastanza contrasto
+          per attirare l’occhio, senza sembrare una pubblicità aggressiva.
+        </p>
+      </header>
+
+      <section class="concepts" aria-label="Tre proposte per l’anteprima del link">
+        <article class="concept is-recommended">
+          <header class="concept-head">
+            <p class="concept-label">Diretta · consigliata</p>
+            <span class="concept-number">01</span>
+          </header>
+          <div class="social-image">
+            <div class="signature signature-lockup"><b>Geff<i aria-hidden="true"></i></b><small>Web Designer</small></div>
+            <p class="social-headline">
+              <span>Fatti capire.</span>
+              <span>Fatti trovare.</span>
+              <span><em>Fatti scegliere.</em></span>
+            </p>
+            <div class="price-badge">
+              <div>
+                <strong>€300</strong>
+                <span>Una volta</span>
+                <small>Nessun abbonamento</small>
+              </div>
+            </div>
+          </div>
+          <div class="concept-side">
+            <div class="preview-meta">
+              <h2 class="preview-title">Geff - Design e sviluppo di siti web</h2>
+              <p class="preview-description">
+                Siti web chiari, veloci e curati per piccole attività che vogliono presentarsi bene online.
+                Seguo personalmente design, testi e pubblicazione.
+              </p>
+              <span class="preview-domain">geff-portfolio-showcases-20260809.geff.workers.dev</span>
+            </div>
+            <div class="concept-notes">
+              <p class="recommendation-label">La mia scelta</p>
+              <h2>Valore prima, dettagli dopo.</h2>
+              <p>La descrizione parla del risultato per il cliente; il badge chiarisce subito prezzo e assenza di abbonamento.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="concept concept-b">
+          <header class="concept-head">
+            <p class="concept-label">Più istituzionale</p>
+            <span class="concept-number">02</span>
+          </header>
+          <div class="social-image">
+            <div class="signature">Geff<span>.</span></div>
+            <p class="social-headline">
+              <span>Fatti capire.</span>
+              <span>Fatti trovare.</span>
+              <span><em>Fatti scegliere.</em></span>
+            </p>
+            <div class="price-badge">
+              <div>
+                <strong>€300</strong>
+                <span>Pagamento unico</span>
+              </div>
+            </div>
+          </div>
+          <div class="concept-side">
+            <div class="preview-meta">
+              <h2 class="preview-title">Geff. — Web designer a Modena</h2>
+              <p class="preview-description">
+                Il tuo sito, seguito da me dall’idea alla pubblicazione. Chiaro, veloce e su misura.
+                €300, senza abbonamento.
+              </p>
+              <span class="preview-domain">geff-portfolio-showcases-20260809.geff.workers.dev</span>
+            </div>
+            <div class="concept-notes">
+              <p class="note-label">Alternativa</p>
+              <h2>Più sobria e professionale.</h2>
+              <p>“Pagamento unico” suona più formale. Il bordo rosso dà enfasi senza aggiungere una freccia.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="concept concept-c">
+          <header class="concept-head">
+            <p class="concept-label">Più orientata al risultato</p>
+            <span class="concept-number">03</span>
+          </header>
+          <div class="social-image">
+            <div class="signature">Geff<span>.</span></div>
+            <p class="social-headline">
+              <span>Il sito che</span>
+              <span>fa scegliere</span>
+              <span><em>proprio te.</em></span>
+            </p>
+            <div class="price-badge">
+              <div>
+                <strong>€300</strong>
+                <span>Una volta</span>
+                <small>Tutto incluso</small>
+              </div>
+            </div>
+          </div>
+          <div class="concept-side">
+            <div class="preview-meta">
+              <h2 class="preview-title">Geff. — Il sito che fa scegliere te</h2>
+              <p class="preview-description">
+                Siti web per piccole attività che vogliono più fiducia e più contatti.
+                Tutto incluso, €300 una volta.
+              </p>
+              <span class="preview-domain">geff-portfolio-showcases-20260809.geff.workers.dev</span>
+            </div>
+            <div class="concept-notes">
+              <p class="note-label">Alternativa</p>
+              <h2>Il messaggio più commerciale.</h2>
+              <p>Meno manifesto, più promessa. Funziona bene se l’obiettivo è massimizzare richieste e contatti.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="language-note" aria-labelledby="language-title">
+        <div>
+          <p class="eyebrow">Come dire “one time”</p>
+          <h2 id="language-title">In italiano, queste sono le tre formule giuste.</h2>
+        </div>
+        <div class="wording-options">
+          <div class="wording-option">
+            <strong>€300 · una volta</strong>
+            <span>La più umana, immediata e memorabile. È quella che userei nell’immagine.</span>
+          </div>
+          <div class="wording-option">
+            <strong>€300 · pagamento unico</strong>
+            <span>Più formale e rassicurante, ma leggermente meno personale.</span>
+          </div>
+          <div class="wording-option">
+            <strong>€300 · nessun abbonamento</strong>
+            <span>Risponde direttamente all’obiezione, ma comunica il beneficio in negativo.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      if (new URLSearchParams(window.location.search).get("render") === "og") {
+        document.body.classList.add("render-og");
+      }
+    </script>
+  </body>
+</html>
