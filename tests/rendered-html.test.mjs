@@ -50,7 +50,7 @@ test("redirects the root to Italian and renders localized metadata", async () =>
   assert.match(html, /Geff - Design e sviluppo di siti web/i);
   assert.match(html, /Siti web chiari, veloci e curati per piccole attività/i);
   assert.match(html, /property=["']og:image["'][^>]+\/og\.png\?v=7/i);
-  assert.match(html, /rel=["']canonical["'][^>]+https:\/\/geff-portfolio-showcases-20260809\.geff\.workers\.dev\/it/i);
+  assert.match(html, /rel=["']canonical["'][^>]+https:\/\/geffweb\.it\/it/i);
   assert.match(html, /hreflang=["']en["'][^>]+\/en/i);
   assert.match(html, /href=["']#main-content["'][^>]*>Vai al contenuto principale/i);
   assert.match(html, /id=["']main-content["']/i);
@@ -252,10 +252,10 @@ test("publishes search metadata and keeps old concept pages private", async () =
   ]);
 
   assert.equal(robotsResponse.status, 200);
-  assert.match(robotsText, /Sitemap: https:\/\/geff-portfolio-showcases-20260809\.geff\.workers\.dev\/sitemap\.xml/i);
+  assert.match(robotsText, /Sitemap: https:\/\/geffweb\.it\/sitemap\.xml/i);
   assert.equal(sitemapResponse.status, 200);
-  assert.match(sitemapText, /<loc>https:\/\/geff-portfolio-showcases-20260809\.geff\.workers\.dev\/it<\/loc>/i);
-  assert.match(sitemapText, /<loc>https:\/\/geff-portfolio-showcases-20260809\.geff\.workers\.dev\/en<\/loc>/i);
+  assert.match(sitemapText, /<loc>https:\/\/geffweb\.it\/it<\/loc>/i);
+  assert.match(sitemapText, /<loc>https:\/\/geffweb\.it\/en<\/loc>/i);
   assert.match(sitemapText, /hreflang="it-IT"[^>]+\/it/i);
   assert.match(sitemapText, /hreflang="en"[^>]+\/en/i);
   for (const response of oldPageResponses) {

@@ -20,6 +20,7 @@ Local preview: `npm run dev -- --host 127.0.0.1 --port 5174`, then open
 
 Localized portfolio for Geff's web-design service. Italian is the default
 language at `/it`; English is available at `/en`; `/` redirects to `/it`.
+The canonical production origin is `https://geffweb.it`.
 
 ## Prerequisites
 

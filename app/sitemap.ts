@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://geff-portfolio-showcases-20260809.geff.workers.dev";
+const siteUrl = "https://geffweb.it";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const languages = {

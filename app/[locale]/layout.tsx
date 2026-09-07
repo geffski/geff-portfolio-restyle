@@ -28,7 +28,7 @@ const dmSerif = DM_Serif_Display({
   weight: "400",
 });
 
-const siteUrl = "https://geff-portfolio-showcases-20260809.geff.workers.dev";
+const siteUrl = "https://geffweb.it";
 
 const metadataCopy = {
   it: {
