@@ -9,7 +9,7 @@ const contentSecurityPolicy = [
   "font-src 'self'",
   "form-action 'self'",
   "frame-ancestors 'self'",
-  "frame-src 'self' https://serenaprevidi.com https://www.serenaprevidi.com https://alpha-fitness-mo.netlify.app https://geff-demo-alma-nutre-20260809.geff.workers.dev https://geff-demo-etera-studio-20260809.geff.workers.dev https://geff-demo-fidalgo-bistro-20260810.geff.workers.dev https://geff-demo-casa-lieve-20260809.geff.workers.dev https://geff-demo-sottoportico-forno-20260810.geff.workers.dev",
+  "frame-src 'self' https://serenaprevidi.com https://www.serenaprevidi.com https://alphaelitefitnessclub.it https://geff-demo-alma-nutre-20260809.geff.workers.dev https://geff-demo-etera-studio-20260809.geff.workers.dev https://geff-demo-fidalgo-bistro-20260810.geff.workers.dev https://geff-demo-casa-lieve-20260809.geff.workers.dev https://geff-demo-sottoportico-forno-20260810.geff.workers.dev",
   "img-src 'self' data: blob:",
   "manifest-src 'self'",
   "object-src 'none'",

@@ -32,7 +32,7 @@ const projects = [
     type: "Palestra",
     eyebrow: "Allenamento · Metodo · Risultati",
     headline: "Un’identità più forte, dentro e fuori dalla palestra.",
-    url: "https://alpha-fitness-mo.netlify.app/",
+    url: "https://alphaelitefitnessclub.it/",
   },
 ];
 
@@ -172,7 +172,7 @@ const englishProjects = [
     type: "Fitness club",
     eyebrow: "Training · Method · Results",
     headline: "A stronger identity, inside and outside the gym.",
-    url: "https://alpha-fitness-mo.netlify.app/",
+    url: "https://alphaelitefitnessclub.it/",
   },
 ];
 
@@ -592,7 +592,7 @@ function FeedbackProjectVisual({
       className={`motion-feedback-site motion-feedback-site--${slug}${url ? " motion-feedback-site--live" : ""}${onMobileToggle ? " motion-preview-mobile-activatable" : ""}${mobileActive ? " is-mobile-active" : ""}`}
       aria-hidden={url ? undefined : true}
     >
-      <div className="motion-feedback-browser-bar"><i /><i /><i /><span>{slug === "serena" ? "serenaprevidi.com" : "alpha-fitness-mo.netlify.app"}</span><Signal /></div>
+      <div className="motion-feedback-browser-bar"><i /><i /><i /><span>{slug === "serena" ? "serenaprevidi.com" : "alphaelitefitnessclub.it"}</span><Signal /></div>
       <Image
         className="motion-project-screenshot"
         src={slug === "serena" ? "/showcases/serena-previdi.png" : "/showcases/alpha-elite.png"}

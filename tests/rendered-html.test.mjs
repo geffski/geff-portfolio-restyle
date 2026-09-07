@@ -105,7 +105,7 @@ test("renders the restyled Italian portfolio with client proof before the offer"
   assert.doesNotMatch(homeHtml, /Nuove aggiunte al progetto/i);
   assert.match(homeHtml, /Siti completi come questi/i);
   assert.match(homeHtml, /https:\/\/serenaprevidi\.com/i);
-  assert.match(homeHtml, /https:\/\/alpha-fitness-mo\.netlify\.app\//i);
+  assert.match(homeHtml, /https:\/\/alphaelitefitnessclub\.it\//i);
   assert.match(homeHtml, /Hai un progetto in mente/i);
   assert.match(homeHtml, /Scrivi a Geff su WhatsApp/i);
   assert.match(homeHtml, /Apri il menu/i);
