@@ -37,7 +37,8 @@ The canonical production origin is `https://geffweb.it`.
 - `app/[locale]/page.tsx`: validates and renders the `it` and `en` routes.
 - `worker/index.ts`: Cloudflare Worker entry point, image handling, and response
   security headers.
-- `.openai/hosting.json`: existing Sites project identity and bindings.
+- `wrangler.jsonc`: direct Cloudflare Worker deployment configuration.
+- `.openai/hosting.json`: legacy Sites manifest retained for the build artifact.
 
 The site has no database, authentication, CMS, or server-side form handler.
 Contact fields remain in the browser and are encoded into a WhatsApp URL only
@@ -73,12 +74,83 @@ HTML tests together.
 
 ## Deployment and rollback
 
-This clone retains the original hosting identity for build compatibility. Do not
-publish it to that identity: provision a separate site before deploying this redesign.
+The production Worker is `geffweb` on Cloudflare. Build the site, then deploy the
+validated artifact with:
 
-The original target is the existing OpenAI Sites project declared in
-`.openai/hosting.json`, which produces a Cloudflare Worker artifact in `dist`.
-Production deployment requires an authorized Sites launch for the exact tested
-commit and artifact. Preserve the previous Sites deployment/version until the
-new release passes its production smoke tests; rollback is promotion of that
-recorded previous version through the same authorized Sites workflow.
+```bash
+npm run build
+./node_modules/.bin/wrangler deploy --config wrangler.jsonc
+```
+
+The Worker is currently available at `https://geffweb.geff.workers.dev`. The
+custom domain `geffweb.it` still points to the legacy Sites service until the
+domain DNS is moved into the Cloudflare account. Once that is complete, attach
+`geffweb.it` and `www.geffweb.it` with Wrangler's `--domain` option and verify
+both hosts before removing the old Sites domains.
+
+Rollback is a Cloudflare Worker deployment rollback using the previous version
+shown by `wrangler deployments list --name geffweb`.
+
+## DNS migration — 2026-09-07
+
+Cloudflare Free plan selected; Edward and Virginia now answer authoritatively.
+All 19 existing records were compared against both Cloudflare nameservers.
+The seven mail-host A records and all other imported records are DNS-only.
+Three verification TXT records omitted by the scan were restored.
+The owner confirmed no domain email usage. Aruba recorded the nameserver change
+to Edward and Virginia at 22:19 CEST; registry propagation remains pending.
+Wrangler authentication was renewed and the unchanged artifact uploaded, but
+custom-domain attachment still failed with conflict code 100117.
+The Cloudflare dialog to remove only the two old apex A records and the www
+CNAME is prepared, awaiting permanent-delete confirmation. Mail records are
+untouched. Old Sites domains and web targets remain attached.
+
+### Aruba DNS snapshot before nameserver change
+
+Full standard-record list inspected in Aruba (18 rows), plus its separate MX.
+BIND export was requested in Aruba; download completion was not verified.
+The following snapshot was independently retrieved from Aruba authoritative DNS.
+Original TTL: 3600 seconds. DNSSEC was disabled.
+
+```bind
+$ORIGIN geffweb.it.
+$TTL 3600
+@ IN A 162.159.143.30
+@ IN A 172.66.3.26
+localhost IN A 127.0.0.1
+mx IN A 62.149.128.151
+mx IN A 62.149.128.154
+mx IN A 62.149.128.157
+mx IN A 62.149.128.160
+mx IN A 62.149.128.163
+mx IN A 62.149.128.166
+mx IN A 62.149.128.74
+_domainconnect IN CNAME _domainconnect.hst.aruba.it.
+admin IN CNAME admin.redirect.aruba.it.
+ftp IN CNAME www.geffweb.it.
+www IN CNAME custom-domains.chatgpt.site.
+@ IN MX 10 mx.geffweb.it.
+_cf-custom-hostname IN TXT "c607cd37-2bdb-4491-9a79-c3b5e9960ba8"
+_cf-custom-hostname.www IN TXT "a3dae4fe-1f5e-4e3a-bdeb-b46d06d31edd"
+_openai-site-verification IN TXT "openai-site-verification=lCuDiGNFWH2p4j9Yp0DVGBP6m_L-ONsqCghqmmwDWbM"
+_openai-site-verification.www IN TXT "openai-site-verification=nz-4XapYbY0sJC8nB745PpDi1uXDlA6mK9yos7uXyug"
+@ IN NS dns.technorail.com.
+@ IN NS dns2.technorail.com.
+@ IN NS dns3.arubadns.net.
+@ IN NS dns4.arubadns.cz.
+```
+
+## Private GitHub repository and Cloudflare Builds
+
+Source repository: https://github.com/geffski/geff-portfolio-restyle (private).
+Production branch: `main`. Existing Cloudflare Worker: `geffweb`.
+
+Cloudflare Builds settings for this repository:
+
+- Root directory: repository root
+- Build command: `npm run build && npm run lint && node --test tests/rendered-html.test.mjs`
+- Deploy command: `npx wrangler deploy --config wrangler.jsonc`
+
+The Git connection is being configured; a successful Cloudflare build must be
+verified before treating automatic deployment as active. The custom-domain
+cutover remains separate from this repository connection.
