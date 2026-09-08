@@ -85,7 +85,8 @@ npm run build
 The Worker is available at `https://geffweb.geff.workers.dev`. Both
 `geffweb.it` and `www.geffweb.it` are attached as production custom domains.
 Cloudflare manages their DNS and certificates; Always Use HTTPS is enabled.
-Keep the old Sites attachments until live verification is complete.
+Both old Sites domain attachments were removed after external HTTPS checks
+returned 200 for the replacement on 2026-09-08.
 
 Rollback is a Cloudflare Worker deployment rollback using the previous version
 shown by `wrangler deployments list --name geffweb`.
@@ -101,7 +102,7 @@ to Edward and Virginia at 22:19 CEST. Cloudflare is now authoritative.
 On 2026-09-08, the owner approved replacing the three old web DNS records.
 The two apex A records and www CNAME were removed, and both hostnames were
 attached to Worker `geffweb`. Their managed TLS certificates show Active.
-Mail records are unchanged. Old Sites attachments remain until verification.
+Mail records are unchanged. Both old Sites attachments have been removed.
 A temporary post-deployment probe in Cloudflare Builds checks both public
 hosts, locales, redirects, and assets independently of this Mac's TLS timeouts.
 
@@ -158,6 +159,7 @@ configured checks and deploy to `geffweb`; non-production branch builds are
 disabled. The first automatic build succeeded on 2026-09-08 for commit
 `df3817a` (build `f01fb4ca-cb54-48a4-b56e-6d5d2d035841`), including the production
 build, artifact validation, lint, four route tests, and Worker deployment.
-Post-deployment HTTPS checks from this Mac encountered TLS connection failures;
-the browser navigation also timed out, so live page verification remains open.
-The custom-domain attachment is complete; remote live verification is in progress.
+External HTTPS checks from Cloudflare Builds returned 200 for `geffweb.it/it`
+and `www.geffweb.it/en` (build `c4d91112-7781-46e3-a23c-2f021da17bb8`).
+This Mac still experiences TLS timeouts despite active certificates and healthy
+external responses. Post-cutover verification checks both hosts and static assets.
