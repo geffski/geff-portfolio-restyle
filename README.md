@@ -103,8 +103,10 @@ On 2026-09-08, the owner approved replacing the three old web DNS records.
 The two apex A records and www CNAME were removed, and both hostnames were
 attached to Worker `geffweb`. Their managed TLS certificates show Active.
 Mail records are unchanged. Both old Sites attachments have been removed.
-A temporary post-deployment probe in Cloudflare Builds checks both public
-hosts, locales, redirects, and assets independently of this Mac's TLS timeouts.
+Cloudflare build `e4bfe50a-c5e2-4048-a9db-bbcdf2063761` verified the completed
+cutover: 10 HTTPS page checks across both hosts and all 38 public assets returned
+200 after Sites detachment. HTTP redirects to HTTPS; `/` resolves to `/it`.
+The temporary remote diagnostic command was removed after verification.
 
 ### Aruba DNS snapshot before nameserver change
 
@@ -162,4 +164,4 @@ build, artifact validation, lint, four route tests, and Worker deployment.
 External HTTPS checks from Cloudflare Builds returned 200 for `geffweb.it/it`
 and `www.geffweb.it/en` (build `c4d91112-7781-46e3-a23c-2f021da17bb8`).
 This Mac still experiences TLS timeouts despite active certificates and healthy
-external responses. Post-cutover verification checks both hosts and static assets.
+external responses. Post-cutover verification passed for both hosts and all public static assets.
