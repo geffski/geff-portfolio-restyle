@@ -155,5 +155,9 @@ The private repository is pushed and verified. Local production build, artifact
 validation, lint, and four route tests passed on 2026-09-08.
 Cloudflare is connected to the private repository. Pushes to `main` run the
 configured checks and deploy to `geffweb`; non-production branch builds are
-disabled. This documentation commit triggers the first automatic build.
+disabled. The first automatic build succeeded on 2026-09-08 for commit
+`df3817a` (build `f01fb4ca-cb54-48a4-b56e-6d5d2d035841`), including the production
+build, artifact validation, lint, four route tests, and Worker deployment.
+Post-deployment HTTPS checks from this Mac encountered TLS connection failures;
+the browser navigation also timed out, so live page verification remains open.
 The custom-domain cutover remains separate from this repository connection.
