@@ -82,11 +82,10 @@ npm run build
 ./node_modules/.bin/wrangler deploy --config wrangler.jsonc
 ```
 
-The Worker is currently available at `https://geffweb.geff.workers.dev`. The
-custom domain `geffweb.it` still points to the legacy Sites service until the
-domain DNS is moved into the Cloudflare account. Once that is complete, attach
-`geffweb.it` and `www.geffweb.it` with Wrangler's `--domain` option and verify
-both hosts before removing the old Sites domains.
+The Worker is available at `https://geffweb.geff.workers.dev`. Both
+`geffweb.it` and `www.geffweb.it` are attached as production custom domains.
+Cloudflare manages their DNS and certificates; Always Use HTTPS is enabled.
+Keep the old Sites attachments until live verification is complete.
 
 Rollback is a Cloudflare Worker deployment rollback using the previous version
 shown by `wrangler deployments list --name geffweb`.
@@ -98,12 +97,13 @@ All 19 existing records were compared against both Cloudflare nameservers.
 The seven mail-host A records and all other imported records are DNS-only.
 Three verification TXT records omitted by the scan were restored.
 The owner confirmed no domain email usage. Aruba recorded the nameserver change
-to Edward and Virginia at 22:19 CEST; registry propagation remains pending.
-Wrangler authentication was renewed and the unchanged artifact uploaded, but
-custom-domain attachment still failed with conflict code 100117.
-The Cloudflare dialog to remove only the two old apex A records and the www
-CNAME is prepared, awaiting permanent-delete confirmation. Mail records are
-untouched. Old Sites domains and web targets remain attached.
+to Edward and Virginia at 22:19 CEST. Cloudflare is now authoritative.
+On 2026-09-08, the owner approved replacing the three old web DNS records.
+The two apex A records and www CNAME were removed, and both hostnames were
+attached to Worker `geffweb`. Their managed TLS certificates show Active.
+Mail records are unchanged. Old Sites attachments remain until verification.
+A temporary post-deployment probe in Cloudflare Builds checks both public
+hosts, locales, redirects, and assets independently of this Mac's TLS timeouts.
 
 ### Aruba DNS snapshot before nameserver change
 
@@ -160,4 +160,4 @@ disabled. The first automatic build succeeded on 2026-09-08 for commit
 build, artifact validation, lint, four route tests, and Worker deployment.
 Post-deployment HTTPS checks from this Mac encountered TLS connection failures;
 the browser navigation also timed out, so live page verification remains open.
-The custom-domain cutover remains separate from this repository connection.
+The custom-domain attachment is complete; remote live verification is in progress.
