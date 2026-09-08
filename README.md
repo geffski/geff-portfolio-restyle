@@ -151,6 +151,9 @@ Cloudflare Builds settings for this repository:
 - Build command: `npm run build && npm run lint && node --test tests/rendered-html.test.mjs`
 - Deploy command: `npx wrangler deploy --config wrangler.jsonc`
 
-The Git connection is being configured; a successful Cloudflare build must be
-verified before treating automatic deployment as active. The custom-domain
-cutover remains separate from this repository connection.
+The private repository is pushed and verified. Local production build, artifact
+validation, lint, and four route tests passed on 2026-09-08.
+Cloudflare does not yet list the repository. Its existing GitHub installation
+requires an account verification code before repository access can be reviewed.
+The Git connection and first automatic deployment remain pending that step.
+The custom-domain cutover remains separate from this repository connection.
