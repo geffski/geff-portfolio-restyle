@@ -153,7 +153,7 @@ Cloudflare Builds settings for this repository:
 
 The private repository is pushed and verified. Local production build, artifact
 validation, lint, and four route tests passed on 2026-09-08.
-Cloudflare does not yet list the repository. Its existing GitHub installation
-requires an account verification code before repository access can be reviewed.
-The Git connection and first automatic deployment remain pending that step.
+Cloudflare is connected to the private repository. Pushes to `main` run the
+configured checks and deploy to `geffweb`; non-production branch builds are
+disabled. This documentation commit triggers the first automatic build.
 The custom-domain cutover remains separate from this repository connection.
