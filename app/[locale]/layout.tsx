@@ -35,14 +35,14 @@ const metadataCopy = {
     title: "Geff - Design e sviluppo di siti web",
     description:
       "Siti web chiari, veloci e curati per piccole attività: €650, fino a 5 pagine anche in italiano e inglese. Design, testi e pubblicazione seguiti da Geff.",
-    imageAlt: "Geff. — Web design & development. €650.",
+    imageAlt: "Geff. — €650. Una volta sola. Il sito è tuo. Nessun abbonamento obbligatorio. Dominio escluso.",
     openGraphLocale: "it_IT",
   },
   en: {
     title: "Geff - Website design and development",
     description:
       "Clear, fast and polished websites for small businesses: €650 for up to 5 pages, including Italian and English. Design, copy and launch handled by Geff.",
-    imageAlt: "Geff. — Web design & development. €650.",
+    imageAlt: "Geff. — €650. Pay once. The site is yours. No mandatory subscription. Domain excluded.",
     openGraphLocale: "en_GB",
   },
 } satisfies Record<Locale, {
@@ -78,7 +78,7 @@ export async function generateMetadata({
   const protocol = forwardedProtocol ?? (host.startsWith("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;
   const canonicalUrl = `${siteUrl}/${locale}`;
-  const socialImage = `${origin}/${locale === "it" ? "og.png?v=7" : "og-en.png?v=3"}`;
+  const socialImage = `${origin}/${locale === "it" ? "og.png?v=8" : "og-en.png?v=4"}`;
 
   return {
     metadataBase: new URL(siteUrl),
@@ -107,7 +107,7 @@ export async function generateMetadata({
       images: [{
         url: socialImage,
         width: 1672,
-        height: 941,
+        height: 940,
         alt: copy.imageAlt,
       }],
     },

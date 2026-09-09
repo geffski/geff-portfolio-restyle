@@ -49,7 +49,7 @@ test("redirects the root to Italian and renders localized metadata", async () =>
   assert.match(html, /<html[^>]+lang=["']it["']/i);
   assert.match(html, /Geff - Design e sviluppo di siti web/i);
   assert.match(html, /Siti web chiari, veloci e curati per piccole attività/i);
-  assert.match(html, /property=["']og:image["'][^>]+\/og\.png\?v=7/i);
+  assert.match(html, /property=["']og:image["'][^>]+\/og\.png\?v=8/i);
   assert.match(html, /rel=["']canonical["'][^>]+https:\/\/geffweb\.it\/it/i);
   assert.match(html, /hreflang=["']en["'][^>]+\/en/i);
   assert.match(html, /href=["']#main-content["'][^>]*>Vai al contenuto principale/i);
@@ -184,7 +184,7 @@ test("renders the complete English portfolio and localized conversion copy", asy
   assert.match(html, /<html[^>]+lang=["']en["']/i);
   assert.match(html, /Geff - Website design and development/i);
   assert.match(html, /rel=["']canonical["'][^>]+\/en/i);
-  assert.match(html, /property=["']og:image["'][^>]+\/og-en\.png\?v=3/i);
+  assert.match(html, /property=["']og:image["'][^>]+\/og-en\.png\?v=4/i);
   assert.match(html, /href=["']\/it["'][^>]+hreflang=["']it["']/i);
   assert.match(html, /href=["']\/en["'][^>]+hreflang=["']en["']/i);
   assert.match(html, /First impressions/i);
