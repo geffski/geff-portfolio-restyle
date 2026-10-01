@@ -41,7 +41,7 @@ const showcases = [
     number: "D01",
     title: "Nutrizione",
     type: "Magazine alimentare",
-    label: "Demo",
+    label: "Concept",
     description: "Un sistema editoriale ampio, naturale e leggibile, costruito per contenuti, ricette e risorse.",
     image: "/showcases/alma-nutre.webp",
     url: "https://geff-demo-alma-nutre-20260809.geff.workers.dev/",
@@ -60,7 +60,7 @@ const showcases = [
     title: "Ristorante",
     mobileFeature: "second",
     type: "Bistro & ristorante",
-    label: "Demo",
+    label: "Concept",
     description: "Un’esperienza immersiva e materica che racconta cucina, atmosfera e ospitalità con un taglio editoriale.",
     image: "/showcases/velaria-wedding.webp",
     url: "https://geff-demo-fidalgo-bistro-20260810.geff.workers.dev/",
@@ -70,7 +70,7 @@ const showcases = [
     title: "Event planner",
     mobileFeature: "first",
     type: "Event studio",
-    label: "Demo",
+    label: "Concept",
     description: "Un’identità espressiva e contemporanea per eventi privati, feste e celebrazioni su misura.",
     image: "/showcases/casa-lieve-events.webp",
     url: "https://geff-demo-casa-lieve-20260809.geff.workers.dev/",
@@ -79,7 +79,7 @@ const showcases = [
     number: "D05",
     title: "Forno artigianale",
     type: "Forno di quartiere",
-    label: "Demo",
+    label: "Concept",
     description: "Un sito caldo e diretto per presentare prodotti, storie e servizi quotidiani di un forno artigianale.",
     image: "/showcases/nativa-wedding-studio.webp",
     url: "https://geff-demo-sottoportico-forno-20260810.geff.workers.dev/",
@@ -89,10 +89,11 @@ const showcases = [
 const testimonials = [
   {
     quote:
+      "Sono molto soddisfatta del lavoro realizzato, in quanto molta è stata la collaborazione a partire da un costante scambio costruttivo di idee.",
+    fullQuote:
       "Ho ricontattato Geffery dopo alcuni mesi dalla sua proposta per poter migliorare il mio sito e sono molto soddisfatta del lavoro realizzato, in quanto molta è stata la collaborazione a partire da un costante scambio costruttivo di idee. Geffery si è mostrato, inoltre, puntuale, disponibile e attento ad ogni richiesta, ma anche flessibile e preciso nella realizzazione del prodotto finale.",
     name: "Serena Previdi",
     role: "Studio di psicologia",
-    mobileCollapsible: true,
   },
   {
     quote:
@@ -181,7 +182,7 @@ const englishShowcases = [
     number: "D01",
     title: "Nutrition",
     type: "Food magazine",
-    label: "Demo",
+    label: "Concept",
     description: "A spacious, natural and readable editorial system designed for content, recipes and resources.",
     image: "/showcases/alma-nutre.webp",
     url: "https://geff-demo-alma-nutre-20260809.geff.workers.dev/",
@@ -200,7 +201,7 @@ const englishShowcases = [
     title: "Restaurant",
     mobileFeature: "second",
     type: "Bistro & restaurant",
-    label: "Demo",
+    label: "Concept",
     description: "An immersive, tactile experience that presents food, atmosphere and hospitality with an editorial feel.",
     image: "/showcases/velaria-wedding.webp",
     url: "https://geff-demo-fidalgo-bistro-20260810.geff.workers.dev/",
@@ -210,7 +211,7 @@ const englishShowcases = [
     title: "Event planner",
     mobileFeature: "first",
     type: "Event studio",
-    label: "Demo",
+    label: "Concept",
     description: "An expressive, contemporary identity for private events, parties and bespoke celebrations.",
     image: "/showcases/casa-lieve-events.webp",
     url: "https://geff-demo-casa-lieve-20260809.geff.workers.dev/",
@@ -219,7 +220,7 @@ const englishShowcases = [
     number: "D05",
     title: "Artisan bakery",
     type: "Neighbourhood bakery",
-    label: "Demo",
+    label: "Concept",
     description: "A warm, direct website for presenting the products, stories and everyday services of an artisan bakery.",
     image: "/showcases/nativa-wedding-studio.webp",
     url: "https://geff-demo-sottoportico-forno-20260810.geff.workers.dev/",
@@ -228,6 +229,7 @@ const englishShowcases = [
 
 type Testimonial = {
   quote: string;
+  fullQuote?: string;
   name: string;
   role: string;
   mobileCollapsible?: boolean;
@@ -237,10 +239,11 @@ type Testimonial = {
 const englishTestimonials: Testimonial[] = [
   {
     quote:
+      "I am very happy with the result. The process was highly collaborative, with a constant and constructive exchange of ideas.",
+    fullQuote:
       "I got back in touch with Geffery a few months after his proposal because I wanted to improve my website, and I am very happy with the result. The process was highly collaborative, with a constant and constructive exchange of ideas. Geffery was punctual, helpful and attentive to every request, as well as flexible and precise in delivering the final website.",
     name: "Serena Previdi",
     role: "Psychology practice",
-    mobileCollapsible: true,
     translationNote: "Translated from Italian",
   },
   {
@@ -256,7 +259,7 @@ const englishFaq = [
   {
     question: "How long does it take?",
     answer:
-      "Once all the necessary content is available and the design direction has been agreed, standard delivery is approximately 48–78 hours. The timeframe starts at that point. Feedback time, new requests or a change of direction may move the delivery date; we will always confirm it before starting.",
+      "Once all the necessary content is available and the design direction has been agreed, standard delivery is approximately 48–72 hours. The timeframe starts at that point. Feedback time, new requests or a change of direction may move the delivery date; we will always confirm it before starting.",
   },
   {
     question: "Can I use a domain I already own?",
@@ -312,7 +315,7 @@ const pageCopy = {
     skipToContent: "Vai al contenuto principale",
     nav: [
       ["#lavori", "Lavori"],
-      ["#showcase", "Demo"],
+      ["#showcase", "Concept"],
       ["#offerta", "Offerta"],
       ["#processo", "Come funziona"],
       ["#testimonianze", "Recensioni"],
@@ -330,6 +333,8 @@ const pageCopy = {
     heroIntro: "Progetto e realizzo siti web per piccole attività e professionisti. Design, testi e pubblicazione: segui ogni passo direttamente con me.",
     heroWorkCta: "Guarda i siti realizzati",
     heroContactCta: "Parliamo del tuo sito",
+    heroQuote: "Puntuale, disponibile e attento ad ogni richiesta.",
+    heroQuoteAuthor: "Serena Previdi · Studio di psicologia",
     projectPreviews: "Anteprime dei progetti realizzati",
     visitProject: "Visita il sito di",
     viewProject: "Vai al progetto",
@@ -348,15 +353,15 @@ const pageCopy = {
     discoverIncluded: "Scopri cosa include",
     projectQuestion: "HAI UN PROGETTO IN MENTE?",
     letsTalk: "Parliamone.",
-    showcaseLabel: "SHOWCASE / CONCEPT · IDENTITÀ FITTIZIE",
-    showcaseTitle: ["Siti demo", "da esplorare."],
+    showcaseLabel: "CONCEPT · IDENTITÀ FITTIZIE, NON CLIENTI REALI",
+    showcaseTitle: ["Siti concept", "da esplorare."],
     showcaseIntro: "Direzioni di design create per il portfolio. Ogni sito è una dimostrazione esplorabile e non rappresenta un’attività operativa.",
     interactiveDemo: "Anteprima interattiva della demo",
     scrollToExplore: "Scorri qui per esplorare",
-    openDemo: "Apri la demo",
-    openDemoLabel: "Apri la demo",
-    showLessDemos: "Mostra solo le principali",
-    showMoreDemos: "Vedi altre 3 demo",
+    openDemo: "Apri il concept",
+    openDemoLabel: "Apri il concept",
+    showLessDemos: "Mostra solo i principali",
+    showMoreDemos: "Vedi altri 3 concept",
     offerLabel: "UN SITO COMPLETO, FATTO BENE",
     offerTitle: ["Semplice nella struttura.", "Completo in tutto il resto."],
     offerIntro: "Il tuo sito vetrina, fino a 5 pagine, anche in italiano e inglese. Design, testi e pubblicazione, seguiti direttamente da me.",
@@ -421,6 +426,7 @@ const pageCopy = {
     closeProject: "Chiudi il progetto",
     close: "Chiudi ×",
     realProject: "Progetto reale",
+    realClient: "Cliente reale",
     visitLiveSite: "Visita il sito live",
     projectPreview: "Anteprima del progetto",
   },
@@ -430,7 +436,7 @@ const pageCopy = {
     skipToContent: "Skip to main content",
     nav: [
       ["#lavori", "Work"],
-      ["#showcase", "Demos"],
+      ["#showcase", "Concepts"],
       ["#offerta", "Offer"],
       ["#processo", "How it works"],
       ["#testimonianze", "Reviews"],
@@ -448,6 +454,8 @@ const pageCopy = {
     heroIntro: "I design and build websites for small businesses and independent professionals. Design, copy and launch: you work directly with me at every step.",
     heroWorkCta: "See the websites I’ve built",
     heroContactCta: "Let’s talk about your website",
+    heroQuote: "Punctual, helpful and attentive to every request.",
+    heroQuoteAuthor: "Serena Previdi · Psychology practice · translated from Italian",
     projectPreviews: "Previews of completed projects",
     visitProject: "Visit the website for",
     viewProject: "View the project",
@@ -466,15 +474,15 @@ const pageCopy = {
     discoverIncluded: "See what’s included",
     projectQuestion: "HAVE A PROJECT IN MIND?",
     letsTalk: "Let’s talk.",
-    showcaseLabel: "SHOWCASE / CONCEPT · FICTIONAL BRANDS",
-    showcaseTitle: ["Website demos", "to explore."],
+    showcaseLabel: "CONCEPT · FICTIONAL BRANDS, NOT REAL CLIENTS",
+    showcaseTitle: ["Concept websites", "to explore."],
     showcaseIntro: "Design directions created for the portfolio. Each website is an interactive demonstration and does not represent an operating business.",
     interactiveDemo: "Interactive preview of the demo",
     scrollToExplore: "Scroll here to explore",
-    openDemo: "Open the demo",
-    openDemoLabel: "Open the demo",
-    showLessDemos: "Show featured demos only",
-    showMoreDemos: "View 3 more demos",
+    openDemo: "Open the concept",
+    openDemoLabel: "Open the concept",
+    showLessDemos: "Show featured concepts only",
+    showMoreDemos: "View 3 more concepts",
     offerLabel: "A COMPLETE WEBSITE, DONE PROPERLY",
     offerTitle: ["Simple in structure.", "Complete where it matters."],
     offerIntro: "Your business website, with up to 5 pages, including Italian and English versions. Design, copy and launch, handled directly by me.",
@@ -539,6 +547,7 @@ const pageCopy = {
     closeProject: "Close project",
     close: "Close ×",
     realProject: "Real project",
+    realClient: "Real client",
     visitLiveSite: "Visit the live website",
     projectPreview: "Project preview",
   },
@@ -603,6 +612,7 @@ function FeedbackProjectVisual({
         unoptimized
         sizes="(max-width: 760px) 100vw, 45vw"
       />
+      {url && <span className="motion-showcase-badge motion-real-client-badge">{text.realClient}</span>}
       {url && onMobileToggle && (
         <button
           className="motion-preview-activate"
@@ -674,7 +684,7 @@ export default function MotionPortfolio({
       ? {
           ...item,
           answer:
-            "Con tutti i contenuti necessari già disponibili e la direzione grafica concordata, la consegna standard è indicativamente di 48–78 ore. Il conteggio parte da quel momento. Tempi di feedback, nuove richieste o cambi di direzione possono spostare la consegna; confermiamo comunque la data prima di iniziare.",
+            "Con tutti i contenuti necessari già disponibili e la direzione grafica concordata, la consegna standard è indicativamente di 48–72 ore. Il conteggio parte da quel momento. Tempi di feedback, nuove richieste o cambi di direzione possono spostare la consegna; confermiamo comunque la data prima di iniziare.",
         }
         : item)
       : faq;
@@ -888,6 +898,10 @@ export default function MotionPortfolio({
                   <a href="#lavori">{text.heroWorkCta} <Signal direction="down" /></a>
                   <a className="is-secondary" href="#contatti">{text.heroContactCta} <Signal /></a>
                 </div>
+                <figure className="motion-hero-quote">
+                  <blockquote>“{text.heroQuote}”</blockquote>
+                  <figcaption>{text.heroQuoteAuthor}</figcaption>
+                </figure>
               </div>
             </div>
             <a className="motion-hero-person" href="#chi-sono">
@@ -1014,13 +1028,14 @@ export default function MotionPortfolio({
               const isExpanded = expandedTestimonialName === testimonial.name;
               return (
                 <blockquote
-                  className={`${testimonial.mobileCollapsible ? "has-mobile-toggle" : ""}${isExpanded ? " is-expanded" : ""}`}
+                  className={`${testimonial.mobileCollapsible ? "has-mobile-toggle" : ""}${testimonial.fullQuote ? " has-full-review" : ""}${isExpanded ? " is-expanded" : ""}`}
                   key={testimonial.name}
                   data-reveal
                 >
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <p>“{testimonial.quote}”</p>
-                  {testimonial.mobileCollapsible && (
+                  {testimonial.fullQuote && isExpanded && <p className="motion-testimonial-full">“{testimonial.fullQuote}”</p>}
+                  {(testimonial.mobileCollapsible || testimonial.fullQuote) && (
                     <button
                       className="motion-testimonial-more"
                       type="button"
