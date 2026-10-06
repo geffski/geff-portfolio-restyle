@@ -6,6 +6,9 @@ import Image from "next/image";
 
 const WHATSAPP_NUMBER = "393341394895";
 const WHATSAPP_DISPLAY = "+39 334 139 4895";
+const CONTACT_EMAIL = "info@geffweb.it";
+// Launch spots left: change this one number to update the banner in both languages.
+const LAUNCH_SPOTS_LEFT = 5;
 type PortfolioLocale = "it" | "en";
 
 const paletteOptions = [
@@ -112,22 +115,22 @@ const faq = [
   {
     question: "Posso usare il dominio che ho già?",
     answer:
-      "Sì. Posso collegare un dominio esistente oppure aiutarti a scegliere e registrare quello giusto. Il dominio resta intestato a te: acquisto e rinnovo annuale sono esclusi dai €650 e li paghi direttamente al fornitore.",
+      "Sì. Se hai già un dominio, lo collego al sito. Se non ce l’hai, lo registro io. Dominio e hosting costano €50 all’anno, a partire dalla pubblicazione.",
   },
   {
     question: "Come si contano le pagine e le lingue?",
     answer:
-      "Sono incluse fino a 5 pagine di contenuto, con struttura e sezioni concordate prima di iniziare. Puoi avere le stesse pagine in italiano e inglese senza supplementi: le versioni tradotte non raddoppiano il conteggio. Preparo i testi nelle due lingue e tu approvi informazioni, termini specifici e traduzioni prima della pubblicazione. Pagine aggiuntive e altre lingue si quotano a parte.",
+      "Il Sito Essenziale è una pagina sola che scorre, con tutte le informazioni principali. Il Sito Completo ha fino a 5 pagine separate. Il prezzo comprende una lingua. Una seconda lingua, ad esempio l’inglese, costa €100 in più: preparo io i testi tradotti e tu li approvi prima della pubblicazione.",
   },
   {
-    question: "Chi gestisce l’hosting?",
+    question: "Cosa comprendono i €50 all’anno?",
     answer:
-      "Per il sito concordato, l’hosting è incluso senza canone finché resta compatibile con il servizio gratuito utilizzato. Se cambiano le condizioni del servizio o servono risorse a pagamento, ti presento prima costi e alternative. Puoi scegliere un altro hosting e non attivo servizi a pagamento senza la tua approvazione. La gestione dell’hosting non comprende modifiche continue ai contenuti.",
+      "Dominio (l’indirizzo del sito), hosting (lo spazio dove vive il sito) e certificato SSL (il lucchetto nel browser). Il sito resta online e sicuro: ci penso io.",
   },
   {
     question: "Posso chiedere modifiche?",
     answer:
-      "Prima della pubblicazione sono incluse le correzioni a testi, immagini e dettagli del design concordato. Nei 30 giorni successivi sono inclusi anche piccoli aggiustamenti a testi e immagini. Nuove pagine o sezioni, funzioni aggiuntive, un cambio di direzione rispetto al design approvato e aggiornamenti successivi a questo periodo vengono preventivati a parte. Non è un servizio di modifiche illimitate nel tempo.",
+      "Prima della pubblicazione sono incluse le correzioni a testi, immagini e dettagli del design concordato. Dopo la pubblicazione, ogni modifica si preventiva a parte: mi scrivi cosa ti serve e ti dico subito quanto costa.",
   },
   {
     question: "Il sito sarà mio?",
@@ -137,22 +140,22 @@ const faq = [
   {
     question: "Chi prepara testi e immagini?",
     answer:
-      "Scrivo o adatto i testi delle pagine concordate, anche in italiano e inglese. Tu fornisci le informazioni sulla tua attività, le immagini utilizzabili e il logo esistente, e approvi contenuti e traduzioni prima della pubblicazione. Servizi fotografici, immagini a pagamento e creazione del logo non sono inclusi.",
+      "Scrivo o adatto i testi delle pagine concordate. Tu fornisci le informazioni sulla tua attività, le immagini utilizzabili e il logo esistente, e approvi i contenuti prima della pubblicazione. Servizi fotografici, immagini a pagamento e creazione del logo non sono inclusi.",
   },
   {
-    question: "€650 è il prezzo totale?",
+    question: "Ci sono costi nascosti?",
     answer:
-      "Sì, €650 è il prezzo totale del pacchetto descritto, senza abbonamento obbligatorio. Acquisto e rinnovo del dominio sono esclusi. Eventuali extra e servizi a pagamento vengono indicati separatamente nel preventivo e attivati solo dopo la tua approvazione. Prima dell’avvio ricevi il riepilogo scritto di ciò che è incluso e dei costi concordati.",
+      "No. Sito Essenziale: €300 una volta. Sito Completo: €500 una volta. In entrambi i casi, €50 all’anno per dominio e hosting. La seconda lingua costa €100 in più. Eventuali altri extra vengono indicati per iscritto e fatti solo dopo la tua approvazione.",
   },
   {
     question: "Posso aggiungere un negozio online o prenotazioni?",
     answer:
-      "Il pacchetto da €650 è pensato per presentare la tua attività, i servizi e i contatti. E-commerce, pagamenti online, sistemi di prenotazione, aree riservate e altre funzioni personalizzate richiedono un preventivo separato.",
+      "No. Realizzo siti vetrina: presentano la tua attività, i servizi e i contatti. E-commerce, pagamenti online, prenotazioni e aree riservate non sono disponibili.",
   },
   {
     question: "Come funziona il pagamento?",
     answer:
-      "Per il pacchetto da €650 paghi €325 all’avvio del progetto e €325 alla pubblicazione del sito approvato. Prima di iniziare confermiamo per iscritto contenuti, tempi ed eventuali extra.",
+      "Paghi il 50% per iniziare e il 50% quando il sito va online. Prima di iniziare confermiamo per iscritto contenuti, tempi ed eventuali extra.",
   },
 ];
 
@@ -264,22 +267,22 @@ const englishFaq = [
   {
     question: "Can I use a domain I already own?",
     answer:
-      "Yes. I can connect an existing domain or help you choose and register the right one. The domain stays in your name: registration and annual renewal are excluded from the €650 and paid directly to the provider.",
+      "Yes. If you already have a domain, I connect it to the website. If you don’t, I register one for you. Domain and hosting cost €50 per year, starting from launch.",
   },
   {
     question: "How are pages and languages counted?",
     answer:
-      "The package includes up to 5 content pages, with their structure and sections agreed before we start. You can have the same pages in Italian and English at no extra charge: translated versions do not count as additional pages. I prepare both versions, and you approve the information, specialist terms and translations before launch. Additional pages and other languages are quoted separately.",
+      "The Essential Website is a single scrolling page with all the key information. The Complete Website has up to 5 separate pages. The price includes one language. A second language, such as English, costs €100 extra: I prepare the translated copy and you approve it before launch.",
   },
   {
-    question: "Who manages the hosting?",
+    question: "What does the €50 per year cover?",
     answer:
-      "Hosting for the agreed website is included without a recurring fee while it remains compatible with the free service used. If the service terms change or paid resources are needed, I explain the costs and alternatives first. You can choose another host, and I do not activate paid services without your approval. Hosting management does not include ongoing content changes.",
+      "Domain (your website’s address), hosting (the space where your website lives) and SSL certificate (the padlock in the browser). Your website stays online and secure: I take care of it.",
   },
   {
     question: "Can I request changes?",
     answer:
-      "Before launch, corrections to copy, images and details of the agreed design are included. Small copy and image adjustments are also included for 30 days after launch. New pages or sections, extra functionality, changes of direction from the approved design and updates after that period are quoted separately. This is not an unlimited ongoing editing service.",
+      "Before launch, corrections to copy, images and details of the agreed design are included. After launch, every change is quoted separately: tell me what you need and I’ll tell you the cost straight away.",
   },
   {
     question: "Will I own the website?",
@@ -289,22 +292,22 @@ const englishFaq = [
   {
     question: "Who prepares the copy and images?",
     answer:
-      "I write or adapt the copy for the agreed pages, including Italian and English versions. You provide your business information, images you can use and your existing logo, and approve the content and translations before launch. Photography, paid images and logo design are not included.",
+      "I write or adapt the copy for the agreed pages. You provide your business information, images you can use and your existing logo, and approve the content before launch. Photography, paid images and logo design are not included.",
   },
   {
-    question: "Is €650 the total price?",
+    question: "Are there any hidden costs?",
     answer:
-      "Yes, €650 is the total price for the package described, with no mandatory subscription. Domain registration and renewal are excluded. Extras and paid services are listed separately in the proposal and activated only with your approval. Before starting, you receive a written summary of what is included and the agreed costs.",
+      "No. Essential Website: €300 once. Complete Website: €500 once. Both have €50 per year for domain and hosting. A second language costs €100 extra. Any other extras are listed in writing and carried out only with your approval.",
   },
   {
     question: "Can I add an online shop or bookings?",
     answer:
-      "The €650 package is designed to present your business, services and contact details. E-commerce, online payments, booking systems, private accounts and other custom functionality require a separate quote.",
+      "No. I build showcase websites that present your business, services and contact details. E-commerce, online payments, bookings and private accounts are not available.",
   },
   {
     question: "How does payment work?",
     answer:
-      "For the €650 package, you pay €325 when the project starts and €325 when the approved website is published. We confirm the content, timeline and any extras in writing before starting.",
+      "You pay 50% to start and 50% when the website goes live. We confirm the content, timeline and any extras in writing before starting.",
   },
 ];
 
@@ -327,7 +330,7 @@ const pageCopy = {
     closeMenu: "Chiudi il menu",
     languageLabel: "Cambia lingua",
     whatsappMenu: "Scrivi a Geff su WhatsApp",
-    directWhatsappMessage: "Ciao Geff, ho visto i tuoi lavori e vorrei parlarti del sito da €650, fino a 5 pagine anche in italiano e inglese, per la mia attività.",
+    directWhatsappMessage: "Ciao Geff, ho visto i tuoi lavori e vorrei parlarti di un sito per la mia attività.",
     heroKicker: "SITI WEB PER PICCOLE ATTIVITÀ · MODENA",
     heroLines: ["La prima impressione", "comincia online."],
     heroIntro: "Progetto e realizzo siti web per piccole attività e professionisti. Design, testi e pubblicazione: segui ogni passo direttamente con me.",
@@ -362,27 +365,66 @@ const pageCopy = {
     openDemoLabel: "Apri il concept",
     showLessDemos: "Mostra solo i principali",
     showMoreDemos: "Vedi altri 3 concept",
-    offerLabel: "UN SITO COMPLETO, FATTO BENE",
-    offerTitle: ["Semplice nella struttura.", "Completo in tutto il resto."],
-    offerIntro: "Il tuo sito vetrina, fino a 5 pagine, anche in italiano e inglese. Design, testi e pubblicazione, seguiti direttamente da me.",
-    priceConditions: "Condizioni del prezzo",
-    priceFacts: ["Prezzo totale del pacchetto", "Nessun abbonamento obbligatorio", "€325 all’avvio · €325 alla pubblicazione"],
-    offerClarification: "€650 è il prezzo totale del pacchetto descritto. Prima di iniziare confermiamo per iscritto struttura, contenuti e tempi. Dominio escluso; eventuali extra vengono preventivati separatamente e realizzati solo dopo la tua approvazione.",
-    includedTitle: "Cosa ricevi con €650",
-    inclusions: [
-      ["Fino a 5 pagine di contenuto", "Definiamo insieme struttura e sezioni per presentare la tua attività."],
-      ["Italiano e inglese inclusi", "Le stesse pagine in due lingue, senza supplementi e senza raddoppiare il conteggio."],
-      ["Design su ogni dispositivo", "Il sito si adatta a desktop, tablet e smartphone."],
-      ["Testi e contenuti", "Preparo i testi e le traduzioni. Tu fornisci informazioni, immagini e logo e approvi i contenuti."],
-      ["Contatti e funzioni essenziali", "Form di contatto, pulsanti, link e Google Maps incorporata, quando servono."],
-      ["Pubblicazione e hosting", "Controllo e pubblico il sito. Hosting senza canone alle condizioni indicate nelle FAQ."],
-      ["Modifiche al progetto concordato", "Correzioni prima della pubblicazione e piccoli aggiustamenti a testi e immagini nei 30 giorni successivi."],
+    fromPrice: "da €300",
+    offerLabel: "PREZZI CHIARI, SENZA SORPRESE",
+    offerTitle: ["Due siti, due prezzi.", "Paghi una volta, il sito è tuo."],
+    offerIntro: "Siti vetrina fatti su misura, seguiti direttamente da me. Il prezzo dipende da quante cose vuoi mostrare.",
+    launchLabel: "Prezzo lancio",
+    launchSpots: ["ultimi", "posti"],
+    plans: [
+      {
+        id: "essenziale",
+        badge: "Per iniziare",
+        name: "Sito Essenziale",
+        tagline: "Una pagina, tutto quello che serve.",
+        price: "€300",
+        priceNote: "una volta",
+        recurring: "+ €50 all’anno",
+        recurringNote: "dominio e hosting",
+        includedTitle: "Cosa è incluso",
+        included: [
+          ["Una pagina sola, che scorre", "Chi sei, servizi, foto, mappa e contatti, tutto in un posto."],
+          ["Perfetto su ogni schermo", "Si vede bene su telefono, tablet e computer."],
+          ["Modulo di contatto e mappa", "I clienti ti scrivono e ti trovano subito."],
+          ["Sito online e sicuro", "Dominio, hosting e SSL: ci penso io."],
+        ],
+        footnote: "Ideale per: barbiere, bar, singolo professionista.",
+        cta: "Scegli il Sito Essenziale",
+        message: "Ciao Geff, mi interessa il Sito Essenziale (€300) per la mia attività.",
+      },
+      {
+        id: "completo",
+        badge: "",
+        name: "Sito Completo",
+        tagline: "Più pagine, per chi ha più da mostrare.",
+        price: "€500",
+        priceNote: "una volta",
+        recurring: "+ €50 all’anno",
+        recurringNote: "dominio e hosting",
+        includedTitle: "Cosa è incluso",
+        included: [
+          ["Fino a 5 pagine", "Ad esempio home, servizi, chi siamo, galleria e contatti."],
+          ["Perfetto su ogni schermo", "Si vede bene su telefono, tablet e computer."],
+          ["Modulo di contatto e mappa", "I clienti ti scrivono e ti trovano subito."],
+          ["Sito online e sicuro", "Dominio, hosting e SSL: ci penso io."],
+        ],
+        footnote: "Ideale per: palestra, ristorante con menù, studio con più servizi.",
+        cta: "Scegli il Sito Completo",
+        message: "Ciao Geff, mi interessa il Sito Completo (€500) per la mia attività.",
+      },
+    ],
+    helpLabel: "Non sai quale scegliere?",
+    helpLine: ["Te lo dico io", "dopo aver visto la tua attività."],
+    helpNote: "Dipende da quante cose vuoi mostrare, non da quanto è grande la tua attività.",
+    sharedTitle: "Vale per entrambi",
+    sharedFacts: [
+      ["Seconda lingua", "+ €100", "Ad esempio l’inglese. Preparo io le traduzioni, tu le approvi."],
+      ["Pagamento", "50% + 50%", "Metà per iniziare, metà quando il sito va online."],
+      ["Modifiche dopo la pubblicazione", "Su preventivo", "Mi scrivi cosa ti serve e ti dico subito quanto costa."],
     ],
     extrasTitle: "Extra",
-    extras: ["Pagine oltre le 5 incluse, nuove sezioni o altre lingue", "Logo, servizi fotografici o immagini a pagamento", "Cambio del design approvato o aggiornamenti dopo i 30 giorni", "E-commerce, prenotazioni o funzioni personalizzate"],
-    fixedPrice: "Prezzo fisso",
-    fixedPriceLine: "€650, in due pagamenti da €325.",
-    paymentDomain: "50% all’avvio e 50% alla pubblicazione. Il dominio resta intestato a te: acquisto e rinnovo sono a tuo carico. Ogni extra richiede un preventivo e la tua approvazione.",
+    extras: ["Pagine oltre le 5 incluse", "Logo, servizi fotografici o immagini a pagamento", "Cambio del design approvato"],
+    extrasNote: "Solo siti vetrina: niente e-commerce, prenotazioni o aree riservate.",
     testimonialsLabel: "TESTIMONIANZE",
     testimonialsTitle: "Com’è lavorare insieme.",
     collapseReview: "Riduci",
@@ -408,6 +450,8 @@ const pageCopy = {
     contactIntro: "Raccontami cosa fai e cosa ti serve. Il messaggio si apre su WhatsApp e ti rispondo personalmente.",
     responseTime: "Di solito rispondo entro 12 ore.",
     directWhatsapp: "Scrivi a Geff su WhatsApp",
+    emailCta: "Oppure scrivi una email",
+    emailSubject: "Richiesta sito web",
     formChoice: "OPPURE · PREPARA UN MESSAGGIO PIÙ DETTAGLIATO",
     formName: "01 · IL TUO NOME",
     formNamePlaceholder: "Come ti chiami?",
@@ -448,7 +492,7 @@ const pageCopy = {
     closeMenu: "Close menu",
     languageLabel: "Change language",
     whatsappMenu: "Message Geff on WhatsApp",
-    directWhatsappMessage: "Hi Geff, I saw your work and I’d like to discuss the €650 website package, with up to 5 pages including Italian and English versions, for my business.",
+    directWhatsappMessage: "Hi Geff, I saw your work and I’d like to talk about a website for my business.",
     heroKicker: "WEBSITES FOR SMALL BUSINESSES · MODENA",
     heroLines: ["First impressions", "start online."],
     heroIntro: "I design and build websites for small businesses and independent professionals. Design, copy and launch: you work directly with me at every step.",
@@ -483,27 +527,66 @@ const pageCopy = {
     openDemoLabel: "Open the concept",
     showLessDemos: "Show featured concepts only",
     showMoreDemos: "View 3 more concepts",
-    offerLabel: "A COMPLETE WEBSITE, DONE PROPERLY",
-    offerTitle: ["Simple in structure.", "Complete where it matters."],
-    offerIntro: "Your business website, with up to 5 pages, including Italian and English versions. Design, copy and launch, handled directly by me.",
-    priceConditions: "Price terms",
-    priceFacts: ["Total package price", "No subscription required", "€325 to start · €325 on publication"],
-    offerClarification: "€650 is the total price for the package described. We confirm the structure, content and timeline in writing before starting. The domain is excluded; extras are quoted separately and carried out only with your approval.",
-    includedTitle: "What you get for €650",
-    inclusions: [
-      ["Up to 5 content pages", "We agree the structure and sections that best present your business."],
-      ["Italian and English included", "The same pages in both languages, at no extra charge and without doubling the page count."],
-      ["Designed for every device", "The website adapts to desktop, tablet and smartphone screens."],
-      ["Copy and content", "I prepare the copy and translations. You provide business information, images and your logo, and approve the content."],
-      ["Contact and essential functionality", "Contact forms, buttons, links and an embedded Google Map when needed."],
-      ["Publishing and hosting", "I check and launch the website. Hosting has no recurring fee under the conditions explained in the FAQ."],
-      ["Changes to the agreed project", "Corrections before launch and small copy and image adjustments during the following 30 days."],
+    fromPrice: "from €300",
+    offerLabel: "CLEAR PRICES, NO SURPRISES",
+    offerTitle: ["Two websites, two prices.", "Pay once, the website is yours."],
+    offerIntro: "Showcase websites made for you, handled directly by me. The price depends on how much you want to show.",
+    launchLabel: "Launch price",
+    launchSpots: ["last", "spots"],
+    plans: [
+      {
+        id: "essenziale",
+        badge: "To get started",
+        name: "Essential Website",
+        tagline: "One page, everything you need.",
+        price: "€300",
+        priceNote: "once",
+        recurring: "+ €50 per year",
+        recurringNote: "domain and hosting",
+        includedTitle: "What’s included",
+        included: [
+          ["A single scrolling page", "Who you are, services, photos, map and contact, all in one place."],
+          ["Looks right on every screen", "Works well on phones, tablets and computers."],
+          ["Contact form and map", "Customers can message you and find you straight away."],
+          ["Online and secure", "Domain, hosting and SSL: I take care of it."],
+        ],
+        footnote: "A good fit for: a barber, a café, an independent professional.",
+        cta: "Choose the Essential Website",
+        message: "Hi Geff, I’m interested in the Essential Website (€300) for my business.",
+      },
+      {
+        id: "completo",
+        badge: "",
+        name: "Complete Website",
+        tagline: "More pages, for businesses with more to show.",
+        price: "€500",
+        priceNote: "once",
+        recurring: "+ €50 per year",
+        recurringNote: "domain and hosting",
+        includedTitle: "What’s included",
+        included: [
+          ["Up to 5 pages", "For example home, services, about, gallery and contact."],
+          ["Looks right on every screen", "Works well on phones, tablets and computers."],
+          ["Contact form and map", "Customers can message you and find you straight away."],
+          ["Online and secure", "Domain, hosting and SSL: I take care of it."],
+        ],
+        footnote: "A good fit for: a gym, a restaurant with a menu, a studio with several services.",
+        cta: "Choose the Complete Website",
+        message: "Hi Geff, I’m interested in the Complete Website (€500) for my business.",
+      },
+    ],
+    helpLabel: "Not sure which one?",
+    helpLine: ["I’ll tell you", "once I’ve seen your business."],
+    helpNote: "It depends on how much you want to show, not on how big your business is.",
+    sharedTitle: "Applies to both",
+    sharedFacts: [
+      ["Second language", "+ €100", "English, for example. I prepare the translations, you approve them."],
+      ["Payment", "50% + 50%", "Half to start, half when the website goes live."],
+      ["Changes after launch", "Quoted", "Tell me what you need and I’ll tell you the cost straight away."],
     ],
     extrasTitle: "Extras",
-    extras: ["Pages beyond the 5 included, new sections or other languages", "Logo design, photography or paid images", "Changes to the approved design or updates after 30 days", "E-commerce, booking or custom functionality"],
-    fixedPrice: "Fixed price",
-    fixedPriceLine: "€650, in two payments of €325.",
-    paymentDomain: "50% to start and 50% on publication. Your domain stays in your name: registration and renewal are your responsibility. Every extra requires a quote and your approval.",
+    extras: ["Pages beyond the 5 included", "Logo design, photography or paid images", "Changes to the approved design"],
+    extrasNote: "Showcase websites only: no e-commerce, bookings or private accounts.",
     testimonialsLabel: "TESTIMONIALS",
     testimonialsTitle: "What it’s like to work together.",
     collapseReview: "Show less",
@@ -529,6 +612,8 @@ const pageCopy = {
     contactIntro: "Tell me what you do and what you need. Your message opens in WhatsApp, and I reply personally.",
     responseTime: "I usually reply within 12 hours.",
     directWhatsapp: "Message Geff on WhatsApp",
+    emailCta: "Or send an email",
+    emailSubject: "Website enquiry",
     formChoice: "OR · PREPARE A MORE DETAILED MESSAGE",
     formName: "01 · YOUR NAME",
     formNamePlaceholder: "What’s your name?",
@@ -999,7 +1084,7 @@ export default function MotionPortfolio({
           {feedbackPreview && reviewMode && (
             <a className="motion-feedback-price-reveal motion-review-price-reveal" href="#offerta" data-reveal>
               <span>{text.fullSites}</span>
-              <strong>€650</strong>
+              <strong>{text.fromPrice}</strong>
               <i>{text.discoverIncluded} <Signal direction="down" /></i>
             </a>
           )}
@@ -1125,89 +1210,82 @@ export default function MotionPortfolio({
           {feedbackPreview && !reviewMode && (
             <a className="motion-feedback-price-reveal" href="#offerta" data-reveal>
               <span>SITI COMPLETI COME QUESTI</span>
-              <strong>€650</strong>
+              <strong>{text.fromPrice}</strong>
               <i>Scopri cosa include <Signal direction="down" /></i>
             </a>
           )}
         </section>
 
         <section className="motion-offer" id="offerta" aria-labelledby="motion-offer-title">
-          <div className="motion-offer-main" data-reveal>
-            <p className="motion-label">{text.offerLabel}</p>
-            <h2 id="motion-offer-title">{text.offerTitle[0]}<br /><em>{text.offerTitle[1]}</em></h2>
-            <div className="motion-offer-promise">
-              <strong>€650</strong>
-              <div>
-                <p>{text.offerIntro}</p>
-                <div className="motion-offer-price-facts" aria-label={text.priceConditions}>
-                  <span>{text.priceFacts[0]}</span>
-                  <span>{text.priceFacts[1]}</span>
-                  {reviewMode && <span>{text.priceFacts[2]}</span>}
-                </div>
-                <small>
-                  {text.offerClarification}
-                </small>
-              </div>
+          <div className="motion-offer-head" data-reveal>
+            <div>
+              <p className="motion-label">{text.offerLabel}</p>
+              <h2 id="motion-offer-title">{text.offerTitle[0]}<br /><em>{text.offerTitle[1]}</em></h2>
+            </div>
+            <div className="motion-offer-head-copy">
+              <p className="motion-offer-launch"><i aria-hidden="true" />{`${text.launchLabel}: ${text.launchSpots[0]} ${LAUNCH_SPOTS_LEFT} ${text.launchSpots[1]}`}</p>
+              <p>{text.offerIntro}</p>
             </div>
           </div>
-          <aside className="motion-offer-scope" data-reveal>
-            <div>
-              <h3>{text.includedTitle}</h3>
-              <ul className="motion-offer-inclusions">
-                {text.inclusions.map(([title, description]) => (
-                  <li key={title}><Signal direction="check" /><strong>{title}</strong><span>{description}</span></li>
-                ))}
-              </ul>
+          <div className="motion-offer-plans">
+            {text.plans.map((plan) => (
+              <article
+                className={`motion-plan motion-plan--${plan.id}${plan.badge ? " motion-plan--recommended" : ""}`}
+                key={plan.id}
+                aria-labelledby={`motion-plan-${plan.id}`}
+                data-reveal
+              >
+                <div className="motion-plan-top">
+                  <h3 id={`motion-plan-${plan.id}`}>{plan.name}</h3>
+                  {plan.badge && <span className="motion-plan-badge">{plan.badge}</span>}
+                </div>
+                <p className="motion-plan-tagline">{plan.tagline}</p>
+                <div className="motion-plan-price">
+                  <strong>{plan.price}</strong>
+                  <span>{plan.priceNote}</span>
+                </div>
+                <p className="motion-plan-recurring">
+                  <b>{plan.recurring}</b>
+                  <span>{plan.recurringNote}</span>
+                </p>
+                <h4>{plan.includedTitle}</h4>
+                <ul className="motion-plan-list">
+                  {plan.included.map(([title, description]) => (
+                    <li key={title}><Signal direction="check" /><strong>{title}</strong><span>{description}</span></li>
+                  ))}
+                </ul>
+                <p className="motion-plan-footnote">{plan.footnote}</p>
+                <a
+                  className="motion-plan-cta"
+                  href={whatsappUrl(plan.message)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {plan.cta} <Signal />
+                </a>
+              </article>
+            ))}
+          </div>
+          <div className="motion-offer-shared" data-reveal>
+            <div className="motion-offer-help">
+              <span>{text.helpLabel}</span>
+              <p>{text.helpLine[0]} <em>{text.helpLine[1]}</em></p>
+              <small>{text.helpNote}</small>
             </div>
-            {feedbackPreview ? (
-              <div className="motion-feedback-offer-boundaries">
-                <section className="motion-feedback-offer-list">
-                  <h3>{text.extrasTitle}</h3>
-                  <ul>
-                    {text.extras.map((extra) => <li key={extra}>{extra}</li>)}
-                  </ul>
-                </section>
-                <div className="motion-feedback-fixed-price">
-                  <span>{text.fixedPrice}</span>
-                  <div>
-                    <strong>{text.fixedPriceLine}</strong>
-                    {reviewMode && <p>{text.paymentDomain}</p>}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="motion-offer-boundaries">
-                <div className="motion-offer-boundary">
-                  <div>
-                    <span className="motion-offer-term-label">Dentro i €650</span>
-                    <strong>Modifiche al sito concordato</strong>
-                  </div>
-                  <ul className="motion-offer-term-tags">
-                    <li>Correzioni testi</li>
-                    <li>Cambio immagini</li>
-                    <li>Dettagli grafici</li>
-                  </ul>
-                </div>
-                <div className="motion-offer-boundary">
-                  <div>
-                    <span className="motion-offer-term-label">A parte, solo se richiesto</span>
-                    <strong>Nuove aggiunte al progetto</strong>
-                  </div>
-                  <ul className="motion-offer-term-tags">
-                    <li>Nuove pagine</li>
-                    <li>Logo o restyling</li>
-                    <li>E-commerce o prenotazioni</li>
-                  </ul>
-                </div>
-                <div className="motion-offer-price-note">
-                  <span>Prezzo fisso</span>
-                  <div>
-                    <strong>€650. Nessun abbonamento obbligatorio.</strong>
-                  </div>
-                </div>
-              </div>
-            )}
-          </aside>
+            <h3>{text.sharedTitle}</h3>
+            <ul className="motion-offer-shared-facts">
+              {text.sharedFacts.map(([title, value, description]) => (
+                <li key={title}><span>{title}</span><strong>{value}</strong><p>{description}</p></li>
+              ))}
+            </ul>
+            <section className="motion-feedback-offer-list">
+              <h3>{text.extrasTitle}</h3>
+              <ul>
+                {text.extras.map((extra) => <li key={extra}>{extra}</li>)}
+              </ul>
+              <p>{text.extrasNote}</p>
+            </section>
+          </div>
         </section>
 
         <section className="motion-method" id="processo" aria-labelledby="motion-method-title">
@@ -1275,17 +1353,25 @@ export default function MotionPortfolio({
             <h2 id="motion-contact-title">{text.contactTitle[0]}<br />{text.contactTitle[1]}</h2>
             <p>{text.contactIntro}</p>
             {reviewMode && <p className="motion-contact-response-time">{text.responseTime}</p>}
-            <a
-              className="motion-whatsapp-direct magnetic"
-              href={directWhatsAppUrl}
-              target="_blank"
-              rel="noreferrer"
-              onPointerMove={moveMagnet}
-              onPointerLeave={resetMagnet}
-            >
-              {reviewMode ? text.directWhatsapp : "Apri WhatsApp"} <Signal />
-            </a>
-            <small className="motion-contact-number">WhatsApp: {WHATSAPP_DISPLAY}</small>
+            <div className="motion-contact-actions">
+              <a
+                className="motion-whatsapp-direct magnetic"
+                href={directWhatsAppUrl}
+                target="_blank"
+                rel="noreferrer"
+                onPointerMove={moveMagnet}
+                onPointerLeave={resetMagnet}
+              >
+                {reviewMode ? text.directWhatsapp : "Apri WhatsApp"} <Signal />
+              </a>
+              <a
+                className="motion-email-direct"
+                href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(text.emailSubject)}`}
+              >
+                {text.emailCta} <Signal />
+              </a>
+            </div>
+            <small className="motion-contact-number">WhatsApp: {WHATSAPP_DISPLAY} · Email: {CONTACT_EMAIL}</small>
           </div>
 
           <form className="motion-form" onSubmit={openWhatsApp} onInput={updateContactReadiness} data-reveal>

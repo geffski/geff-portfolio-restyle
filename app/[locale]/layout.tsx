@@ -34,15 +34,15 @@ const metadataCopy = {
   it: {
     title: "Geff - Design e sviluppo di siti web",
     description:
-      "Siti web chiari, veloci e curati per piccole attività: €650, fino a 5 pagine anche in italiano e inglese. Design, testi e pubblicazione seguiti da Geff.",
-    imageAlt: "Geff. — €650. Una volta sola. Il sito è tuo. Nessun abbonamento obbligatorio. Dominio escluso.",
+      "Siti web chiari, veloci e curati per piccole attività: €300 per una pagina, €500 fino a 5 pagine. Paghi una volta, il sito è tuo. Design e pubblicazione seguiti da Geff.",
+    imageAlt: "Geff. Web design & development per piccole attività.",
     openGraphLocale: "it_IT",
   },
   en: {
     title: "Geff - Website design and development",
     description:
-      "Clear, fast and polished websites for small businesses: €650 for up to 5 pages, including Italian and English. Design, copy and launch handled by Geff.",
-    imageAlt: "Geff. — €650. Pay once. The site is yours. No mandatory subscription. Domain excluded.",
+      "Clear, fast and polished websites for small businesses: €300 for one page, €500 for up to 5 pages. Pay once, the website is yours. Design and launch handled by Geff.",
+    imageAlt: "Geff. Web design & development for small businesses.",
     openGraphLocale: "en_GB",
   },
 } satisfies Record<Locale, {

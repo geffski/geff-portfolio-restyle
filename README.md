@@ -7,13 +7,16 @@ The restyle uses warm white, charcoal, and cobalt, with real project screenshots
 a personal introduction, client reviews alongside the work, and a simplified
 navigation. Italian, English, and the WhatsApp handoff are retained.
 
-The fixed offer is €650 for up to five content pages, including their Italian
-and English versions. Payment is €325 at the start and €325 on publication.
-Corrections to the agreed project before launch and small copy/image adjustments
-for 30 days after launch are included; later updates and additional scope require
-a separate approved quote. Domain registration and renewal are paid by the client.
-Hosting is included while compatible with the free service used; changes to those
-conditions or paid resources must be discussed and approved in advance.
+There are two static showcase-site offers, both paid once plus €50/year for
+domain and hosting (starting at launch):
+
+- Sito Essenziale: €300, a single scrolling page.
+- Sito Completo: €500, up to five pages.
+
+A second language is a €100 add-on. Payment is 50% to start and 50% at launch.
+Changes after launch are quoted separately. No e-commerce, bookings or private
+accounts. The launch-spots number in the pricing banner is `LAUNCH_SPOTS_LEFT`
+in `app/MotionPortfolio.tsx`.
 
 Local preview: `npm run dev -- --host 127.0.0.1 --port 5174`, then open
 `http://127.0.0.1:5174/it` or `http://127.0.0.1:5174/en`.
