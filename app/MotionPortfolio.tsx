@@ -830,6 +830,51 @@ export default function MotionPortfolio({
     };
   }, []);
 
+  useEffect(() => {
+    let frame = 0;
+    const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+    const onAnchorClick = (event: globalThis.MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
+      const link = (event.target as Element | null)?.closest?.("a[href^='#']");
+      const hash = link?.getAttribute("href");
+      if (!hash || hash === "#" || hash === "#main-content") return;
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (!target) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      event.preventDefault();
+      cancelAnimationFrame(frame);
+      const offset = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const start = window.scrollY;
+      const end = Math.max(0, target.getBoundingClientRect().top + start - offset);
+      const distance = end - start;
+      const isMobile = window.matchMedia("(max-width: 760px)").matches;
+      // Slow, readable scroll: longer trips take longer, phones a little slower.
+      const duration = Math.min(Math.max(Math.abs(distance) * 0.35, 700), 1500) * (isMobile ? 1.3 : 1);
+      const began = performance.now();
+
+      const step = (now: number) => {
+        const progress = Math.min((now - began) / duration, 1);
+        window.scrollTo({ top: start + distance * easeInOut(progress), behavior: "instant" });
+        if (progress < 1) frame = requestAnimationFrame(step);
+      };
+      frame = requestAnimationFrame(step);
+      history.pushState(null, "", hash);
+    };
+
+    const stopOnUserScroll = () => cancelAnimationFrame(frame);
+    document.addEventListener("click", onAnchorClick);
+    window.addEventListener("wheel", stopOnUserScroll, { passive: true });
+    window.addEventListener("touchstart", stopOnUserScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener("click", onAnchorClick);
+      window.removeEventListener("wheel", stopOnUserScroll);
+      window.removeEventListener("touchstart", stopOnUserScroll);
+    };
+  }, []);
+
   const moveMagnet = (event: PointerEvent<HTMLElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const x = (event.clientX - rect.left - rect.width / 2) * 0.18;
