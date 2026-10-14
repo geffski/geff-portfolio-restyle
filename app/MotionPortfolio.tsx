@@ -832,7 +832,7 @@ export default function MotionPortfolio({
 
   useEffect(() => {
     let frame = 0;
-    const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
 
     const onAnchorClick = (event: globalThis.MouseEvent) => {
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey) return;
@@ -850,13 +850,13 @@ export default function MotionPortfolio({
       const end = Math.max(0, target.getBoundingClientRect().top + start - offset);
       const distance = end - start;
       const isMobile = window.matchMedia("(max-width: 760px)").matches;
-      // Slow, readable scroll: longer trips take longer, phones a little slower.
-      const duration = Math.min(Math.max(Math.abs(distance) * 0.35, 700), 1500) * (isMobile ? 1.3 : 1);
+      // Quick scroll that starts moving at once: longer trips take a bit longer, phones slightly slower.
+      const duration = Math.min(Math.max(Math.abs(distance) * 0.12, 400), 800) * (isMobile ? 1.15 : 1);
       const began = performance.now();
 
       const step = (now: number) => {
         const progress = Math.min((now - began) / duration, 1);
-        window.scrollTo({ top: start + distance * easeInOut(progress), behavior: "instant" });
+        window.scrollTo({ top: start + distance * easeOut(progress), behavior: "instant" });
         if (progress < 1) frame = requestAnimationFrame(step);
       };
       frame = requestAnimationFrame(step);
