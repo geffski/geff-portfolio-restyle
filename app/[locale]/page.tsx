@@ -7,8 +7,8 @@ type Locale = (typeof locales)[number];
 const siteUrl = "https://geffweb.it";
 
 const structuredDataCopy = {
-  it: "Web design e sviluppo di siti web per piccole attività. Sito di una pagina a €300, fino a 5 pagine a €500.",
-  en: "Website design and development for small businesses. One-page website for €300, up to 5 pages for €500.",
+  it: "Web design e sviluppo di siti web per piccole attività in tutta Italia. Sito vetrina a €300, tutto incluso.",
+  en: "Website design and development for small businesses across Italy. Showcase website for €300, all included.",
 } satisfies Record<Locale, string>;
 
 function isLocale(value: string): value is Locale {
@@ -29,9 +29,8 @@ export default async function LocalizedHome({
     name: "Geff",
     url: `${siteUrl}/${locale}`,
     description: structuredDataCopy[locale],
-    telephone: "+39 334 139 4895",
-    priceRange: "€300–€500",
-    areaServed: { "@type": "City", name: "Modena" },
+    priceRange: "€300",
+    areaServed: { "@type": "Country", name: "Italia" },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Modena",
@@ -44,16 +43,7 @@ export default async function LocalizedHome({
         priceCurrency: "EUR",
         itemOffered: {
           "@type": "Service",
-          name: locale === "en" ? "Essential Website" : "Sito Essenziale",
-        },
-      },
-      {
-        "@type": "Offer",
-        price: "500",
-        priceCurrency: "EUR",
-        itemOffered: {
-          "@type": "Service",
-          name: locale === "en" ? "Complete Website" : "Sito Completo",
+          name: locale === "en" ? "Showcase Website" : "Sito Vetrina",
         },
       },
     ],
